@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "poppins";
+}
+
+body {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "pixel";
+  src: url("../assets/font/VCR_OSD_MONO_1.001.ttf");
+}
+html {
+  /* Personalizar la barra de desplazamiento */
+  /* Fondo de la barra de desplazamiento */
+  /* La barra de desplazamiento misma */
+  /* Cambio de color cuando el mouse pasa sobre la barra */
+}
+html ::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra vertical */
+  height: 12px; /* Altura de la barra horizontal (si existe) */
+  display: block;
+}
+html ::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo del track */
+  border-radius: 5px; /* Bordes redondeados */
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: #909090; /* Color de la barra */
+  border-radius: 10px; /* Bordes redondeados para suavidad */
+  border: 2px solid transparent; /* Espacio entre el scrollbar y el track */
+  background-clip: padding-box; /* Asegura que el borde sea visible */
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cambia el color cuando está en hover */
+}
+
+body header nav {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(239, 239, 239, 0.937254902);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header nav .logoContainer {
+  width: 20%;
+  height: 100%;
+  margin-left: 20px;
+}
+body header nav .logoContainer img {
+  width: 100%;
+}
+body header nav ul {
+  display: flex;
+  gap: 5px;
+  margin-right: 50px;
+}
+
+/*# sourceMappingURL=styles.css.map */

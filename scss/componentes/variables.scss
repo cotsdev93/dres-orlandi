@@ -1,0 +1,46 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "poppins";
+}
+
+body {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "pixel";
+  src: url("../assets/font/VCR_OSD_MONO_1.001.ttf");
+}
+
+html {
+  /* Personalizar la barra de desplazamiento */
+  ::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra vertical */
+    height: 12px; /* Altura de la barra horizontal (si existe) */
+    display: block;
+  }
+  
+  /* Fondo de la barra de desplazamiento */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+
+  /* La barra de desplazamiento misma */
+  ::-webkit-scrollbar-thumb {
+    background-color: #909090; /* Color de la barra */
+    border-radius: 10px; /* Bordes redondeados para suavidad */
+    border: 2px solid transparent; /* Espacio entre el scrollbar y el track */
+    background-clip: padding-box; /* Asegura que el borde sea visible */
+  }
+
+  /* Cambio de color cuando el mouse pasa sobre la barra */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Cambia el color cuando está en hover */
+  }
+}
