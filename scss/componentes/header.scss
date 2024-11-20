@@ -7,7 +7,7 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .logoContainer{
+      .logoContainer {
         width: 20%;
         height: 100%;
         margin-left: 20px;
@@ -17,8 +17,10 @@ body {
       }
       ul {
         display: flex;
-        gap: 5px;
         margin-right: 50px;
+        li {
+          margin: 5px;
+        }
       }
     }
   }

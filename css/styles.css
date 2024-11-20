@@ -60,8 +60,10 @@ body header nav .logoContainer img {
 }
 body header nav ul {
   display: flex;
-  gap: 5px;
   margin-right: 50px;
+}
+body header nav ul li {
+  margin: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
