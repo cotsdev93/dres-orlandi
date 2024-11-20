@@ -1,0 +1,29 @@
+body {
+  main {
+    #servicios {
+      text-align: center;
+      h2 {
+        font-size: 30px;
+        color: $grisOscuro;
+      }
+      p {
+        color: $gris;
+      }
+      .servicios {
+        display: flex;
+        .servicioContainer {
+          width: 25%;
+          .imgServicio {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          h2 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "nombre": "Medicina Estetica",
+    "img": "./assets/img/mesoterapiaFacial2.png"
+  },
+  {
+    "nombre": "Ginecologia Estetica",
+    "img": ""
+  },
+  {
+    "nombre": "Cirugia Estetica",
+    "img": "./assets/img/cirugiaEstetica.jpg"
+  }
+]
