@@ -11,16 +11,35 @@ body {
       }
       .servicios {
         display: flex;
+        justify-content: center;
         .servicioContainer {
           width: 25%;
-          .imgServicio {
+        //   border: solid 5px pink;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .imgContainer {
+            border: solid 0.2px $gris;
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
+            .imgServicio {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            //   border: solid 1px blue;
+              object-fit: cover;
+              transition: 1s;
+              cursor: pointer;
+              &:hover {
+                transform: scale(1.3);
+              }
+            }
           }
           h2 {
             font-size: 20px;
+            color: $gris;
           }
         }
       }

@@ -10,5 +10,9 @@
   {
     "nombre": "Cirugia Estetica",
     "img": "./assets/img/cirugiaEstetica.jpg"
+  },
+  {
+    "nombre": "Cosmiatria",
+    "img": "./assets/img/cosmiatria.jpg"
   }
 ]

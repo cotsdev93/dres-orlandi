@@ -25,7 +25,9 @@ class Servicios {
     for (const servicio of listaServicios) {
       divServicios.innerHTML += `
           <div class="servicioContainer">
-            <img class="imgServicio" src="${servicio.img}">
+            <div class="imgContainer">
+                <img class="imgServicio" src="${servicio.img}">
+            </div>
             <h2>${servicio.nombre}</h2>
           </div>
           `;
