@@ -5,10 +5,10 @@
   },
   {
     "nombre": "Ginecologia Estetica",
-    "img": ""
+    "img": "./assets/img/ginecologiaEstetica.jpg"
   },
   {
-    "nombre": "Cirugia Estetica",
+    "nombre": "Cirugia Plastica",
     "img": "./assets/img/cirugiaEstetica.jpg"
   },
   {

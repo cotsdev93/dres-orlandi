@@ -2,24 +2,25 @@ body {
   main {
     #servicios {
       text-align: center;
+      margin: 20px; 
       h2 {
         font-size: 30px;
+        font-weight: 600;
         color: $grisOscuro;
       }
       p {
         color: $gris;
+        padding: 10px 150px 20px 150px;
       }
       .servicios {
         display: flex;
         justify-content: center;
         .servicioContainer {
-          width: 25%;
-        //   border: solid 5px pink;
+          width: 20%;
           display: flex;
           flex-direction: column;
           align-items: center;
           .imgContainer {
-            border: solid 0.2px $gris;
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -28,7 +29,6 @@ body {
               width: 100%;
               height: 100%;
               border-radius: 50%;
-            //   border: solid 1px blue;
               object-fit: cover;
               transition: 1s;
               cursor: pointer;
@@ -38,8 +38,10 @@ body {
             }
           }
           h2 {
-            font-size: 20px;
+            font-size: 17px;
+            font-weight: 500;
             color: $gris;
+            margin: 10px;
           }
         }
       }
