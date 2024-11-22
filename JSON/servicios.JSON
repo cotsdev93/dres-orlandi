@@ -1,18 +1,38 @@
-[
-  {
-    "nombre": "Medicina Estetica",
-    "img": "./assets/img/mesoterapiaFacial2.png"
-  },
-  {
-    "nombre": "Ginecologia Estetica",
-    "img": "./assets/img/ginecologiaEstetica.jpg"
-  },
-  {
-    "nombre": "Cirugia Plastica",
-    "img": "./assets/img/cirugiaEstetica.jpg"
-  },
-  {
-    "nombre": "Cosmiatria",
-    "img": "./assets/img/cosmiatria.jpg"
-  }
-]
+{
+  "estetica": [
+    {
+      "nombre": "Medicina Estetica",
+      "img": "./assets/img/mesoterapiaFacial2.png"
+    },
+    {
+      "nombre": "Ginecologia Estetica",
+      "img": "./assets/img/ginecologiaEstetica.jpg"
+    },
+    {
+      "nombre": "Cirugia Plastica",
+      "img": "./assets/img/cirugiaEstetica.jpg"
+    },
+    {
+      "nombre": "Cosmiatria",
+      "img": "./assets/img/cosmiatria.jpg"
+    }
+  ],
+  "medicina": [
+    {
+      "nombre": "Ginecologia General",
+      "img": "./assets/img/ginecologia.jpg"
+    },
+    {
+      "nombre": "Pediatria",
+      "img": "./assets/img/pediatria.jpg"
+    },
+    {
+      "nombre": "Neumonologia",
+      "img": "./assets/img/neumonologia.webp"
+    },
+    {
+      "nombre": "Neonatologia",
+      "img": "./assets/img/neonatologia.jpg"
+    }
+  ]
+}

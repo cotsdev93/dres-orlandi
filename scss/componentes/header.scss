@@ -7,7 +7,8 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      box-shadow: 0px 0px 5px 1px #00000030;
+      border-bottom: solid 1px #ffffff;
       .logoContainer {
         width: 20%;
         height: 100%;
@@ -34,9 +35,9 @@ body {
               content: "";
               position: absolute;
               height: 1px;
-              left: 0; 
+              left: 0;
               bottom: 0;
-              width: 0; 
+              width: 0;
               background-color: $gris;
               transition: width 0.3s ease, left 0.3s ease;
             }
