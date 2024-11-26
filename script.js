@@ -46,3 +46,64 @@ function cargarServiciosCategoria(listaServicios, selector) {
       </div>`;
   }
 }
+
+// MAP
+function initMap() {
+  const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
+
+  // Crear el mapa
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: location,
+    zoom: 16,
+    disableDefaultUI: true,
+    // gestureHandling: "none",
+    styles: [
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#d5d5d5",
+          },
+        ],
+      },
+    ],
+  });
+
+  // Cargar la PlacesService para obtener detalles del lugar
+  const service = new google.maps.places.PlacesService(map);
+
+  // Aquí colocamos el Place ID que nos diste
+  const placeId = "ChIJP0W_HXnHvJURGmfg0nBN2Lk";
+
+  // Utilizamos PlacesService para obtener el lugar por Place ID
+  service.getDetails(
+    {
+      placeId: placeId,
+      fields: ["name", "formatted_address", "geometry"], // Puedes agregar más campos según lo que necesites
+    },
+    (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        // Crear un marcador en el mapa en la ubicación del lugar
+        const marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name,
+        });
+
+        // Crear un infoWindow para mostrar información del lugar
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<div><strong>${place.name}</strong><br>${place.formatted_address}</div>`,
+        });
+
+        // Abrir el InfoWindow automáticamente sin necesidad de clic
+        infoWindow.open(map, marker);
+
+        // Centrar el mapa en la ubicación del marcador
+        map.setCenter(place.geometry.location);
+      } else {
+        console.error("No se pudo obtener los detalles del lugar: " + status);
+      }
+    }
+  );
+}

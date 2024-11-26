@@ -103,6 +103,7 @@ body main #servicios h2 {
 body main #servicios h3 {
   font-size: 20px;
   margin-top: 10px;
+  color: #79797A;
 }
 body main #servicios p {
   color: #79797A;
@@ -175,6 +176,61 @@ body main #servicios .serviciosMedicos .servicioContainer h2 {
   font-weight: 500;
   color: #79797A;
   margin: 10px;
+}
+
+body #consultorios {
+  border: solid 1px red;
+  padding: 20px;
+}
+body #consultorios h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #464648;
+  text-align: center;
+  padding-bottom: 10px;
+}
+body #consultorios .consultoriosContainer {
+  display: flex;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno p {
+  color: #79797A;
+  padding: 10px 20px;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno #map {
+  width: 90%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw-chr {
+  display: none;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw {
+  padding: 0px;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw .gm-style-iw-d {
+  width: 200px;
+  padding: 7px;
+  margin: 0px;
+  padding-bottom: 0px;
+  margin-right: -40px;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerUno iframe {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1254901961);
+  margin-bottom: 20px;
+}
+body #consultorios .consultoriosContainer .consultoriosContainerDos {
+  width: 50%;
+  border: solid 1px red;
 }
 
 /*# sourceMappingURL=styles.css.map */
