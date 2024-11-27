@@ -47,7 +47,7 @@ function cargarServiciosCategoria(listaServicios, selector) {
   }
 }
 
-// MAP
+// Consultorios MAP
 function initMap() {
   const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
 
@@ -56,7 +56,7 @@ function initMap() {
     center: location,
     zoom: 16,
     disableDefaultUI: true,
-    // gestureHandling: "none",
+    gestureHandling: "none",
     styles: [
       {
         featureType: "road",
@@ -107,3 +107,43 @@ function initMap() {
     }
   );
 }
+
+// CARROUSEL FOTOS
+
+class CarrouselFotos {
+  constructor() {
+    this.fotos = []; // Inicializa fotos como un arreglo vacío.
+    this.cargarRegistros().then(() => {
+      this.cargarFotos();
+    });
+  }
+
+  async cargarRegistros() {
+    try {
+      const resultado = await fetch("./JSON/fotosConsultorios.JSON");
+      this.fotos = await resultado.json();
+    } catch (error) {
+      console.error("Error cargando las fotos:", error); // Este mensaje podría eliminarse si no es crucial.
+    }
+  }
+
+  cargarFotos() {
+    const consultorioCarrousel = document.querySelector(".consultorioCarrousel");
+
+    consultorioCarrousel.innerHTML = ""; // Limpia el contenedor.
+
+    for (const foto of this.fotos) {
+      consultorioCarrousel.innerHTML += `
+      <div class="fotoCarrouselContainer">
+        <img src="${foto.img}" alt="Foto del consultorio">
+      </div>
+      `;
+    }
+  }
+}
+
+// Crear instancia de CarrouselFotos.
+const carrouselFotos = new CarrouselFotos();
+
+// Verificar en consola el estado del objeto.
+console.log(carrouselFotos);

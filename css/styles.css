@@ -178,59 +178,74 @@ body main #servicios .serviciosMedicos .servicioContainer h2 {
   margin: 10px;
 }
 
-body #consultorios {
+body #consultorio {
   border: solid 1px red;
   padding: 20px;
 }
-body #consultorios h2 {
+body #consultorio h2 {
   font-size: 30px;
   font-weight: 600;
   color: #464648;
   text-align: center;
   padding-bottom: 10px;
 }
-body #consultorios .consultoriosContainer {
+body #consultorio .consultorioContainer {
   display: flex;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno {
+body #consultorio .consultorioContainer .consultorioContainerUno {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno p {
+body #consultorio .consultorioContainer .consultorioContainerUno p {
   color: #79797A;
   padding: 10px 20px;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno #map {
+body #consultorio .consultorioContainer .consultorioContainerUno #map {
   width: 90%;
-  height: 300px;
+  height: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: #f7f9f9 1px solid;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw-chr {
+body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw-chr {
   display: none;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw {
+body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw {
   padding: 0px;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno #map .gm-style-iw .gm-style-iw-d {
+body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw .gm-style-iw-d {
   width: 200px;
   padding: 7px;
   margin: 0px;
   padding-bottom: 0px;
   margin-right: -40px;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerUno iframe {
+body #consultorio .consultorioContainer .consultorioContainerUno iframe {
   width: 90%;
   border-radius: 20px;
   box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.1254901961);
   margin-bottom: 20px;
 }
-body #consultorios .consultoriosContainer .consultoriosContainerDos {
+body #consultorio .consultorioContainer .consultorioContainerDos {
   width: 50%;
   border: solid 1px red;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer {
+  width: 100%;
+  height: 100%;
+  border: solid 1px red;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel {
+  width: 100%;
+  height: 100%;
+  border: solid px red;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel .fotoCarrouselContainer img {
+  width: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */
