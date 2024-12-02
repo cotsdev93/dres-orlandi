@@ -232,20 +232,31 @@ body #consultorio .consultorioContainer .consultorioContainerUno iframe {
 }
 body #consultorio .consultorioContainer .consultorioContainerDos {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid 1px red;
+  max-height: 80vh;
+  padding: 10px;
 }
 body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer {
   width: 100%;
   height: 100%;
-  border: solid 1px red;
+  border: 1px solid pink;
+  overflow-x: auto; /* Scroll horizontal */
+  overflow-y: hidden; /* Oculta el scroll vertical */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel {
+  display: flex;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  border: solid px red;
-}
-body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel .fotoCarrouselContainer img {
-  width: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */

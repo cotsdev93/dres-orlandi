@@ -128,15 +128,17 @@ class CarrouselFotos {
   }
 
   cargarFotos() {
-    const consultorioCarrousel = document.querySelector(".consultorioCarrousel");
+    const consultorioCarrousel = document.querySelector(
+      ".consultorioCarrousel"
+    );
 
     consultorioCarrousel.innerHTML = ""; // Limpia el contenedor.
 
     for (const foto of this.fotos) {
       consultorioCarrousel.innerHTML += `
-      <div class="fotoCarrouselContainer">
-        <img src="${foto.img}" alt="Foto del consultorio">
-      </div>
+      
+        <img src="${foto.img}" alt="">
+      
       `;
     }
   }
