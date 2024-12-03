@@ -179,7 +179,7 @@ body main #servicios .serviciosMedicos .servicioContainer h2 {
 }
 
 body #consultorio {
-  border: solid 1px red;
+  background-color: #f7f9f9;
   padding: 20px;
 }
 body #consultorio h2 {
@@ -235,16 +235,29 @@ body #consultorio .consultorioContainer .consultorioContainerDos {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px red;
   max-height: 80vh;
   padding: 10px;
+  position: relative;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  cursor: pointer;
+  color: #f7f9f9;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-left {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  cursor: pointer;
+  color: #f7f9f9;
 }
 body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer {
   width: 100%;
   height: 100%;
-  border: 1px solid pink;
-  overflow-x: auto; /* Scroll horizontal */
-  overflow-y: hidden; /* Oculta el scroll vertical */
+  overflow-x: auto;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -257,6 +270,9 @@ body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCar
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
