@@ -55,48 +55,54 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        // border: solid 1px red;
         max-height: 80vh;
         padding: 10px;
         position: relative;
+      
+        .fa-chevron-right, .fa-chevron-left {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          color: $blanco;
+          font-size: 24px;
+          z-index: 10;
+        }
+      
         .fa-chevron-right {
-          position: absolute;
-          top: 50%;
           right: 15px;
-          cursor: pointer;
-          color: $blanco;
         }
+      
         .fa-chevron-left {
-          position: absolute;
-          top: 50%;
           left: 15px;
-          cursor: pointer;
-          color: $blanco;
         }
+      
         .consultorioCarrouselContainer {
           width: 100%;
           height: 100%;
-          overflow-x: auto;
-          overflow-y: hidden;
+          overflow: hidden; // Oculta las partes que se desbordan
           display: flex;
           align-items: center;
           justify-content: center;
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
+      
           .consultorioCarrousel {
             display: flex;
-
+            transition: transform 0.5s ease-in-out; // Animación al deslizar
             img {
-              object-fit: cover;
               width: 100%;
-              height: 100%;
+              height: auto;
+              flex-shrink: 0; // Evita que las imágenes se reduzcan
+              object-fit: cover;
             }
           }
         }
+      
         ::-webkit-scrollbar {
           display: none;
         }
       }
+      
     }
   }
 }

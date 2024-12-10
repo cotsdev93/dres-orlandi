@@ -152,16 +152,42 @@ class CarrouselFotos {
   }
 }
 
-const chevronLeft = document.querySelector(".fa-chevron-left")
-const chevronRight = document.querySelector(".fa-chevron-right")
+// CARROUSEL CONSULTORIO
 
-chevronLeft.addEventListener("click", function(){
-  console.log("va")
-})
+const chevronLeft = document.querySelector(".fa-chevron-left");
+const chevronRight = document.querySelector(".fa-chevron-right");
+const carrousel = document.querySelector(".consultorioCarrousel");
 
-chevronRight.addEventListener("click", function() {
-  console.log("va")
-})
+// Contador para manejar el desplazamiento
+let currentIndex = 0;
+
+// Captura el ancho del contenedor del carrusel
+const carrouselContainer = document.querySelector(".consultorioCarrouselContainer");
+const containerWidth = carrouselContainer.offsetWidth;
+
+// Evento para mover a la izquierda
+chevronLeft.addEventListener("click", function () {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCarrouselPosition();
+  }
+});
+
+// Evento para mover a la derecha
+chevronRight.addEventListener("click", function () {
+  // Asegura que no se desplace más allá del contenido
+  if (currentIndex < carrousel.children.length - 1) {
+    currentIndex++;
+    updateCarrouselPosition();
+  }
+});
+
+// Función para actualizar la posición del carrusel
+function updateCarrouselPosition() {
+  const newTranslateX = -currentIndex * containerWidth;
+  carrousel.style.transform = `translateX(${newTranslateX}px)`;
+}
+
 
 // Crear instancia de CarrouselFotos.
 const carrouselFotos = new CarrouselFotos();
