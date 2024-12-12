@@ -178,6 +178,11 @@ body main #servicios .serviciosMedicos .servicioContainer h2 {
   margin: 10px;
 }
 
+body main #pacientes {
+  width: 100%;
+  height: 100vh;
+}
+
 body #consultorio {
   background-color: #f7f9f9;
   padding: 20px;
@@ -245,8 +250,10 @@ body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-rig
   transform: translateY(-50%);
   cursor: pointer;
   color: #f7f9f9;
+  opacity: 0.7;
   font-size: 24px;
   z-index: 10;
+  font-size: 15px;
 }
 body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-right {
   right: 15px;
@@ -275,6 +282,39 @@ body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCar
 }
 body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrollbar {
   display: none;
+}
+
+body main #preguntasFrecuentes {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  border: solid 1px red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #preguntasFrecuentes h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #464648;
+}
+body main #preguntasFrecuentes .preguntasContainer {
+  border: solid 1px red;
+  height: auto;
+  width: 70%;
+  margin-top: 20px;
+}
+body main #preguntasFrecuentes .preguntasContainer .pregunta {
+  width: 100%;
+  height: 30px;
+  border: solid 1px blue;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 1s;
+}
+body main #preguntasFrecuentes .preguntasContainer .pregunta.expandida {
+  height: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,37 @@
+body {
+  main {
+    #preguntasFrecuentes {
+      width: 100%;
+      height: 100vh;
+      padding: 20px;
+      border: solid 1px red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        font-size: 30px;
+        font-weight: 600;
+        color: $grisOscuro;
+      }
+      .preguntasContainer{
+        border: solid 1px red;
+        height: auto;
+        width: 70%;
+        margin-top: 20px;
+        .pregunta {
+          width: 100%;
+          height: 30px;
+          border: solid 1px blue;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: 1s;
+          &.expandida{
+            height: 100px;
+          }
+        }
+
+      }
+    }
+  }
+}

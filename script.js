@@ -1,5 +1,3 @@
-console.log("funca");
-
 // Clase para manejar los servicios
 class Servicios {
   constructor() {
@@ -162,7 +160,9 @@ const carrousel = document.querySelector(".consultorioCarrousel");
 let currentIndex = 0;
 
 // Captura el ancho del contenedor del carrusel
-const carrouselContainer = document.querySelector(".consultorioCarrouselContainer");
+const carrouselContainer = document.querySelector(
+  ".consultorioCarrouselContainer"
+);
 const containerWidth = carrouselContainer.offsetWidth;
 
 // Evento para mover a la izquierda
@@ -188,9 +188,18 @@ function updateCarrouselPosition() {
   carrousel.style.transform = `translateX(${newTranslateX}px)`;
 }
 
-
 // Crear instancia de CarrouselFotos.
 const carrouselFotos = new CarrouselFotos();
 
 // Verificar en consola el estado del objeto.
 console.log(carrouselFotos);
+
+// Preguntas Frecuentes
+
+const preguntas = document.querySelectorAll(".pregunta"); // Usa un punto para seleccionar la clase
+
+for (const pregunta of preguntas) {
+  pregunta.addEventListener("click", () => {
+    pregunta.classList.toggle("expandida")
+  });
+}
