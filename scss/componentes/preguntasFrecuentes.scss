@@ -4,7 +4,6 @@ body {
       width: 100%;
       height: 100vh;
       padding: 20px;
-      border: solid 1px red;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -13,24 +12,41 @@ body {
         font-weight: 600;
         color: $grisOscuro;
       }
-      .preguntasContainer{
-        border: solid 1px red;
+      .preguntasContainer {
         height: auto;
         width: 70%;
         margin-top: 20px;
-        .pregunta {
+        .preguntaContainer {
           width: 100%;
           height: 30px;
-          border: solid 1px blue;
-          display: flex;
-          align-items: center;
           cursor: pointer;
           transition: 1s;
-          &.expandida{
+          overflow: hidden;
+          border: solid 0.5px $blanco;
+          .pregunta {
+            height: 30px;
+            background-color: $grisClaro;
+            display: flex;
+            align-items: center;
+            p {
+              color: red;
+            }
+            .flechaPregunta {
+              width: 10px;
+              transition: 1s;
+              &.rotada {
+                transform: rotate(90deg);
+              }
+            }
+          }
+          .respuesta {
+            border: solid 3px green;
+            height: auto;
+          }
+          &.expandida {
             height: 100px;
           }
         }
-
       }
     }
   }

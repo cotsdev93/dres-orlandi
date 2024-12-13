@@ -196,10 +196,14 @@ console.log(carrouselFotos);
 
 // Preguntas Frecuentes
 
-const preguntas = document.querySelectorAll(".pregunta"); // Usa un punto para seleccionar la clase
+const preguntas = document.querySelectorAll(".preguntaContainer"); 
 
 for (const pregunta of preguntas) {
   pregunta.addEventListener("click", () => {
-    pregunta.classList.toggle("expandida")
+    pregunta.classList.toggle("expandida"); 
+    const flecha = pregunta.querySelector(".flechaPregunta"); 
+    if (flecha) {
+      flecha.classList.toggle("rotada");
+    }
   });
 }

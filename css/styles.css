@@ -288,7 +288,6 @@ body main #preguntasFrecuentes {
   width: 100%;
   height: 100vh;
   padding: 20px;
-  border: solid 1px red;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,21 +298,39 @@ body main #preguntasFrecuentes h2 {
   color: #464648;
 }
 body main #preguntasFrecuentes .preguntasContainer {
-  border: solid 1px red;
   height: auto;
   width: 70%;
   margin-top: 20px;
 }
-body main #preguntasFrecuentes .preguntasContainer .pregunta {
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer {
   width: 100%;
   height: 30px;
-  border: solid 1px blue;
-  display: flex;
-  align-items: center;
   cursor: pointer;
   transition: 1s;
+  overflow: hidden;
+  border: solid 0.5px #f7f9f9;
 }
-body main #preguntasFrecuentes .preguntasContainer .pregunta.expandida {
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta {
+  height: 30px;
+  background-color: #d5d5d5;
+  display: flex;
+  align-items: center;
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta p {
+  color: red;
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta {
+  width: 10px;
+  transition: 1s;
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta.rotada {
+  transform: rotate(90deg);
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .respuesta {
+  border: solid 3px green;
+  height: auto;
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer.expandida {
   height: 100px;
 }
 
