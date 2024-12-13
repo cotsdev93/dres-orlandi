@@ -2,7 +2,7 @@ body {
   main {
     #preguntasFrecuentes {
       width: 100%;
-      height: 100vh;
+      height: auto;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -29,22 +29,54 @@ body {
             display: flex;
             align-items: center;
             p {
-              color: red;
+              color: $grisOscuro;
+              font-size: 20px;
             }
             .flechaPregunta {
-              width: 10px;
+              width: 9px;
               transition: 1s;
+              margin: 5px;
+              filter: invert(15%) sepia(3%) saturate(88%) hue-rotate(180deg)
+                brightness(95%) contrast(92%);
+
               &.rotada {
                 transform: rotate(90deg);
               }
             }
           }
           .respuesta {
-            border: solid 3px green;
-            height: auto;
+            background-color: $grisMasCaro;
+            height: 70px;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+              color: $grisOscuro;
+            }
           }
           &.expandida {
             height: 100px;
+          }
+        }
+      }
+      .textoPreguntasContainer {
+        display: flex;
+        margin: 20px;
+        align-items: center;
+        .textoPreguntas {
+          color: $grisClaro;
+        }
+        a {
+          .fa-whatsapp {
+            color: $grisOscuro;
+            margin: 5px;
+            transform: translateY(-3px);
+            transition: 0.5s;
+            font-size: 25px;
+            &:hover {
+              color: green
+            }
           }
         }
       }

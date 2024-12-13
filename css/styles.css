@@ -286,7 +286,7 @@ body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrol
 
 body main #preguntasFrecuentes {
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -317,21 +317,49 @@ body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta 
   align-items: center;
 }
 body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta p {
-  color: red;
+  color: #464648;
+  font-size: 20px;
 }
 body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta {
-  width: 10px;
+  width: 9px;
   transition: 1s;
+  margin: 5px;
+  filter: invert(15%) sepia(3%) saturate(88%) hue-rotate(180deg) brightness(95%) contrast(92%);
 }
 body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta.rotada {
   transform: rotate(90deg);
 }
 body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .respuesta {
-  border: solid 3px green;
-  height: auto;
+  background-color: #f7f3f3;
+  height: 70px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .respuesta p {
+  color: #464648;
 }
 body main #preguntasFrecuentes .preguntasContainer .preguntaContainer.expandida {
   height: 100px;
+}
+body main #preguntasFrecuentes .textoPreguntasContainer {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
+body main #preguntasFrecuentes .textoPreguntasContainer .textoPreguntas {
+  color: #d5d5d5;
+}
+body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp {
+  color: #464648;
+  margin: 5px;
+  transform: translateY(-3px);
+  transition: 0.5s;
+  font-size: 25px;
+}
+body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp:hover {
+  color: green;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -197,9 +197,21 @@ console.log(carrouselFotos);
 // Preguntas Frecuentes
 
 const preguntas = document.querySelectorAll(".preguntaContainer"); 
-
+  
 for (const pregunta of preguntas) {
   pregunta.addEventListener("click", () => {
+    // Cierra cualquier pregunta que esté actualmente expandida
+    for (const otraPregunta of preguntas) {
+      if (otraPregunta !== pregunta) { // Evita cerrar la que se acaba de hacer clic
+        otraPregunta.classList.remove("expandida"); // Remueve la clase expandida
+        const otraFlecha = otraPregunta.querySelector(".flechaPregunta");
+        if (otraFlecha) {
+          otraFlecha.classList.remove("rotada"); // Asegura que la flecha se deshaga del giro
+        }
+      }
+    }
+
+    // Alterna la expansión de la pregunta actual
     pregunta.classList.toggle("expandida"); 
     const flecha = pregunta.querySelector(".flechaPregunta"); 
     if (flecha) {
@@ -207,3 +219,4 @@ for (const pregunta of preguntas) {
     }
   });
 }
+
