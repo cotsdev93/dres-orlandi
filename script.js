@@ -151,18 +151,16 @@ class CarrouselFotos {
 }
 
 // CARROUSEL CONSULTORIO
-
 const chevronLeft = document.querySelector(".fa-chevron-left");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const carrousel = document.querySelector(".consultorioCarrousel");
+const dots = document.querySelectorAll(".dot");
 
 // Contador para manejar el desplazamiento
 let currentIndex = 0;
 
 // Captura el ancho del contenedor del carrusel
-const carrouselContainer = document.querySelector(
-  ".consultorioCarrouselContainer"
-);
+const carrouselContainer = document.querySelector(".consultorioCarrouselContainer");
 const containerWidth = carrouselContainer.offsetWidth;
 
 // Evento para mover a la izquierda
@@ -186,15 +184,26 @@ chevronRight.addEventListener("click", function () {
 function updateCarrouselPosition() {
   const newTranslateX = -currentIndex * containerWidth;
   carrousel.style.transform = `translateX(${newTranslateX}px)`;
+  updateDots();
 }
 
-// Crear instancia de CarrouselFotos.
+// Función para actualizar el estado de los dots
+function updateDots() {
+  dots.forEach((dot, index) => {
+    if (index === currentIndex) {
+      dot.classList.add("active");
+    } else {
+      dot.classList.remove("active");
+    }
+  });
+}
+
+// Inicialización para que los dots reflejen la imagen actual
+updateDots();
+
 const carrouselFotos = new CarrouselFotos();
 
-// Verificar en consola el estado del objeto.
-console.log(carrouselFotos);
-
-// Preguntas Frecuentes
+//////////////////////////////////////////// Preguntas Frecuentes
 
 const preguntas = document.querySelectorAll(".preguntaContainer"); 
   
