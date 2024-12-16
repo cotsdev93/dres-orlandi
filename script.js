@@ -45,8 +45,6 @@ function cargarServiciosCategoria(listaServicios, selector) {
   }
 }
 
-
-
 ///////////////////////////////////////////// CARROUSEL FOTOS
 
 class CarrouselFotos {
@@ -93,7 +91,9 @@ const dots = document.querySelectorAll(".dot");
 // Contador para manejar el desplazamiento
 let currentIndex = 0;
 
-const carrouselContainer = document.querySelector(".consultorioCarrouselContainer");
+const carrouselContainer = document.querySelector(
+  ".consultorioCarrouselContainer"
+);
 const containerWidth = carrouselContainer.offsetWidth;
 
 // Evento para mover a la izquierda
@@ -146,8 +146,12 @@ function autoSlide() {
 const autoSlideInterval = setInterval(autoSlide, 5000);
 
 // Detener el auto-slide mientras interactúas con las flechas
-chevronLeft.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
-chevronRight.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+chevronLeft.addEventListener("mouseenter", () =>
+  clearInterval(autoSlideInterval)
+);
+chevronRight.addEventListener("mouseenter", () =>
+  clearInterval(autoSlideInterval)
+);
 
 // Reinicia el auto-slide después de interactuar
 chevronLeft.addEventListener("mouseleave", () => setInterval(autoSlide, 5000));
@@ -160,13 +164,14 @@ const carrouselFotos = new CarrouselFotos();
 
 //////////////////////////////////////////// Preguntas Frecuentes
 
-const preguntas = document.querySelectorAll(".preguntaContainer"); 
-  
+const preguntas = document.querySelectorAll(".preguntaContainer");
+
 for (const pregunta of preguntas) {
   pregunta.addEventListener("click", () => {
     // Cierra cualquier pregunta que esté actualmente expandida
     for (const otraPregunta of preguntas) {
-      if (otraPregunta !== pregunta) { // Evita cerrar la que se acaba de hacer clic
+      if (otraPregunta !== pregunta) {
+        // Evita cerrar la que se acaba de hacer clic
         otraPregunta.classList.remove("expandida"); // Remueve la clase expandida
         const otraFlecha = otraPregunta.querySelector(".flechaPregunta");
         if (otraFlecha) {
@@ -176,8 +181,8 @@ for (const pregunta of preguntas) {
     }
 
     // Alterna la expansión de la pregunta actual
-    pregunta.classList.toggle("expandida"); 
-    const flecha = pregunta.querySelector(".flechaPregunta"); 
+    pregunta.classList.toggle("expandida");
+    const flecha = pregunta.querySelector(".flechaPregunta");
     if (flecha) {
       flecha.classList.toggle("rotada");
     }
@@ -263,38 +268,61 @@ function initMap() {
 
 // Función para mostrar las reseñas en el HTML
 function displayReviews(reviews) {
-  const reviewsContainer = document.getElementById('reviews');
-  reviewsContainer.innerHTML = '';  // Limpiar el contenedor antes de agregar las reseñas
+  const reviewsContainer = document.getElementById("reviewsContainer");
+  reviewsContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar las reseñas
 
-  // Limitar a 10 reseñas
+  // Limitar reseñas a un máximo de 10
   const limitedReviews = reviews.slice(0, 10);
 
   if (limitedReviews && limitedReviews.length > 0) {
     limitedReviews.forEach((review) => {
-      const reviewDiv = document.createElement('div');
-      reviewDiv.classList.add('review');
-      
-      // Crear el HTML para las estrellas
+      const reviewDiv = document.createElement("div");
+      reviewDiv.classList.add("review");
+
+      // Avatar del autor o un placeholder si no hay imagen
+      const avatar = review.profile_photo_url
+        ? `<img src="${review.profile_photo_url}" alt="${review.author_name}">`
+        : `<img src="https://via.placeholder.com/50" alt="Avatar">`;
+
+      // Estrellas estilizadas
       const stars = createStars(review.rating);
-      
+
       reviewDiv.innerHTML = `
-        <p class="reviewNombre"><strong>${review.author_name}</strong> (${stars})</p>
-        <p class="review">${review.text}</p>
-        <p><em>Fecha de la reseña: ${new Date(review.time * 1000).toLocaleDateString()}</em></p>
-      `;
-      
+      <div class="reviewDetailsContainer">
+      <a href="${
+        review.author_url
+      }" target="_blank" rel="noopener noreferrer">
+        <div class="reviewDetails">
+          ${avatar}
+          <div class="nombreFechaContainer">
+                    <p class="nombre">${review.author_name}</p>
+                    <div class="fechaEstrellaContainer">  
+                    <p class="fecha">${new Date(
+                      review.time * 1000
+                    ).toLocaleDateString()}</p>
+                    <span class="stars">${stars}</span>
+                    </div>
+                    </div>
+                    </div>
+                    <p class="reviewText">${review.text}</p>
+                    </a>
+      </div>
+    `;
+
       reviewsContainer.appendChild(reviewDiv);
     });
   } else {
-    reviewsContainer.innerHTML = '<p>No hay reseñas disponibles.</p>';
+    reviewsContainer.innerHTML =
+      "<p class='no-reviews'>No hay reseñas disponibles.</p>";
   }
 }
 
-// Función para crear las estrellas
+// Función para crear estrellas estilizadas
 function createStars(rating) {
-  let stars = '';
-  for (let i = 0; i < 5; i++) {
-    stars += i < rating ? '★' : '☆'; // Rellenar con estrellas o estrellas vacías
+  const maxStars = 5;
+  let stars = "";
+  for (let i = 1; i <= maxStars; i++) {
+    stars += i <= rating ? "★" : "☆"; // Estrella llena o vacía
   }
   return stars;
 }

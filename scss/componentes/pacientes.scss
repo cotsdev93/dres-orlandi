@@ -1,28 +1,94 @@
 body {
-    main {
-        #pacientes {
-            width: 100%;
-            height: auto;
-            border: solid 1px red;
-            .pacientesContainer {
-                width: 100%;
-                height: 200px;
-                border: solid 1px blue;
+  main {
+    #pacientes {
+      width: 100%;
+      height: auto;
+      //   border: solid 1px red;
+      .pacientesContainer {
+        // width: 100%;
+        // height: 200px;
+        // border: solid 1px blue;
+        // display: flex;
+        #reviewsContainer {
+          display: flex;
+          font-family: Arial, sans-serif;
+          overflow: hidden;
+          height: 200px;
+
+          .reviewDetailsContainer {
+            border: solid 0.5px $grisClaro;
+            margin: 10px;
+            width: 200px;
+            border-radius: 10px;
+            // display: flex;
+            max-height: 190px;
+            a {
+              color: $grisOscuro;
+              .reviewDetails {
                 display: flex;
-                #reviews {
-                    
-                    display: flex;
-                    .reviewNombre {
-                        border: solid 1px red;
-                        width: 500px;
-                    }
-                    .review{
-                        width: 50%;
-                        height: 100px;
-                        overflow: hidden;
-                    }
+                align-items: center;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  margin: 4px;
                 }
+                .nombreFechaContainer {
+                  width: 70%;
+                  // border: solid 1px red;
+                  display: flex;
+                  flex-direction: column;
+                  // align-items: center;
+                  // justify-content: flex-start;
+
+                  .nombre {
+                    font-weight: bold;
+                    font-size: 12px;
+                    //   margin: 5px;
+                    // border: solid 1px rgb(119, 53, 53);
+                  }
+                }
+                .fechaEstrellaContainer {
+                  // border: solid 1px red;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: start;
+                  align-items: center;
+                  height: auto;
+                  //   border: solid 1px red;
+                  gap: 5px;
+                  .fecha {
+                    color: $grisOscuro;
+                    font-size: 10px;
+                  }
+                  .stars {
+                    color: #f4c150; // Color dorado para las estrellas
+                    font-size: 16px;
+                    display: flex;
+                    gap: 2px;
+                    transform: translateY(-3px);
+                  }
+                }
+              }
             }
+
+            // .reviewEstrellaFecha {
+            //   display: flex;
+            //   justify-content: center;
+
+            .reviewText {
+              font-size: 10px;
+              line-height: 1.5;
+              padding: 10px;
+              line-height: 10px;
+            }
+            // }
+          }
+
+          // Estilo para mostrar cuando no hay reseñas
         }
+      }
     }
+  }
 }

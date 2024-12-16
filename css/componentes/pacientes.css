@@ -1,25 +1,17 @@
-body main #pacientes {
-  width: 100%;
-  height: auto;
-  border: solid 1px red;
-}
-body main #pacientes .pacientesContainer {
-  width: 100%;
-  height: 200px;
-  border: solid 1px blue;
-  display: flex;
-}
-body main #pacientes .pacientesContainer #reviews {
-  display: flex;
-}
-body main #pacientes .pacientesContainer #reviews .reviewNombre {
-  border: solid 1px red;
-  width: 500px;
-}
-body main #pacientes .pacientesContainer #reviews .review {
-  width: 50%;
-  height: 100px;
-  overflow: hidden;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 19 |             border: solid 0.5px $grisClaro;
+ *    |                                 ^^^^^^^^^^
+ *    '
+ *   scss\componentes\pacientes.scss 19:33  root stylesheet */
 
-/*# sourceMappingURL=pacientes.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 19 \2502              border: solid 0.5px $grisClaro;\d\a    \2502                                  ^^^^^^^^^^\a    \2575 \a   scss\\componentes\\pacientes.scss 19:33  root stylesheet";
+}
