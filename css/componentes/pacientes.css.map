@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../scss/componentes/pacientes.scss"],"names":[],"mappings":"AAEQ;EACI;EACA","file":"pacientes.css"}
+{"version":3,"sourceRoot":"","sources":["../../scss/componentes/pacientes.scss"],"names":[],"mappings":"AAEQ;EACI;EACA;EACA;;AACA;EACI;EACA;EACA;EACA;;AACA;EAEI;;AACA;EACI;EACA;;AAEJ;EACI;EACA;EACA","file":"pacientes.css"}

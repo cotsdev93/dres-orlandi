@@ -45,76 +45,9 @@ function cargarServiciosCategoria(listaServicios, selector) {
   }
 }
 
-// Consultorios MAP
 
-function initMap() {
-  const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
 
-  // Crear el mapa
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: location,
-    zoom: 16,
-    disableDefaultUI: true, // Oculta los controles estándar
-    gestureHandling: "greedy", // Permite zoom y movimiento
-    styles: [
-      {
-        featureType: "road",
-        elementType: "geometry",
-        stylers: [
-          {
-            color: "#d5d5d5", // Color de los caminos
-          },
-        ],
-      },
-    ],
-  });
-
-  // Place ID del lugar
-  const placeId = "ChIJP0W_HXnHvJURGmfg0nBN2Lk";
-
-  // Usar PlacesService para obtener detalles del lugar
-  const service = new google.maps.places.PlacesService(map);
-
-  service.getDetails(
-    {
-      placeId: placeId,
-      fields: ["name", "formatted_address", "geometry"],
-    },
-    (place, status) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        // Crear un marcador
-        const marker = new google.maps.Marker({
-          position: place.geometry.location,
-          map: map,
-          title: place.name,
-        });
-
-        // Configurar clic en el marcador para abrir Google Maps con el nombre del lugar
-        marker.addListener("click", () => {
-          const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-            place.name
-          )},+${encodeURIComponent(place.formatted_address)}`;
-          window.open(googleMapsURL, "_blank");
-        });
-
-        // Opcional: Añadir una ventana informativa al marcador
-        const infoWindow = new google.maps.InfoWindow({
-          content: `<div><strong>${place.name}</strong><br>${place.formatted_address}</div>`,
-        });
-
-        // Mostrar infoWindow automáticamente
-        infoWindow.open(map, marker);
-
-        // Centrar el mapa en la ubicación del marcador
-        map.setCenter(place.geometry.location);
-      } else {
-        console.error("No se pudo obtener los detalles del lugar: " + status);
-      }
-    }
-  );
-}
-
-// CARROUSEL FOTOS
+///////////////////////////////////////////// CARROUSEL FOTOS
 
 class CarrouselFotos {
   constructor() {
@@ -150,7 +83,8 @@ class CarrouselFotos {
   }
 }
 
-// CARROUSEL CONSULTORIO
+////////////////////////////////////////// CARROUSEL CONSULTORIO
+
 const chevronLeft = document.querySelector(".fa-chevron-left");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const carrousel = document.querySelector(".consultorioCarrousel");
@@ -224,7 +158,6 @@ updateDots();
 
 const carrouselFotos = new CarrouselFotos();
 
-
 //////////////////////////////////////////// Preguntas Frecuentes
 
 const preguntas = document.querySelectorAll(".preguntaContainer"); 
@@ -251,3 +184,117 @@ for (const pregunta of preguntas) {
   });
 }
 
+////////////////////////////////////////////// Consultorios MAP
+
+let map;
+
+// Esta es la función que se ejecuta cuando la API de Maps se ha cargado correctamente
+function initMap() {
+  const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
+
+  // Crear el mapa
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: location,
+    zoom: 16,
+    disableDefaultUI: true, // Oculta los controles estándar
+    gestureHandling: "greedy", // Permite zoom y movimiento
+    styles: [
+      {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [
+          {
+            color: "#d5d5d5", // Color de los caminos
+          },
+        ],
+      },
+    ],
+  });
+
+  // Place ID del lugar
+  const placeId = "ChIJP0W_HXnHvJURGmfg0nBN2Lk";
+
+  // Usar PlacesService para obtener detalles del lugar
+  const service = new google.maps.places.PlacesService(map);
+
+  service.getDetails(
+    {
+      placeId: placeId,
+      fields: ["name", "formatted_address", "geometry", "reviews"], // Incluimos 'reviews' para obtener las reseñas
+    },
+    (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        // Crear un marcador
+        const marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name,
+        });
+
+        // Configurar clic en el marcador para abrir Google Maps con el nombre del lugar
+        marker.addListener("click", () => {
+          const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            place.name
+          )},+${encodeURIComponent(place.formatted_address)}`;
+          window.open(googleMapsURL, "_blank");
+        });
+
+        // Opcional: Añadir una ventana informativa al marcador
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<div><strong>${place.name}</strong><br>${place.formatted_address}</div>`,
+        });
+
+        // Mostrar infoWindow automáticamente
+        infoWindow.open(map, marker);
+
+        // Centrar el mapa en la ubicación del marcador
+        map.setCenter(place.geometry.location);
+
+        // Llamar a la función para mostrar las reseñas
+        if (place.reviews && place.reviews.length > 0) {
+          displayReviews(place.reviews); // Mostrar las reseñas
+        }
+      } else {
+        console.error("No se pudo obtener los detalles del lugar: " + status);
+      }
+    }
+  );
+}
+
+// Función para mostrar las reseñas en el HTML
+function displayReviews(reviews) {
+  const reviewsContainer = document.getElementById('reviews');
+  reviewsContainer.innerHTML = '';  // Limpiar el contenedor antes de agregar las reseñas
+
+  // Limitar a 10 reseñas
+  const limitedReviews = reviews.slice(0, 10);
+
+  if (limitedReviews && limitedReviews.length > 0) {
+    limitedReviews.forEach((review) => {
+      const reviewDiv = document.createElement('div');
+      reviewDiv.classList.add('review');
+      
+      // Crear el HTML para las estrellas
+      const stars = createStars(review.rating);
+      
+      reviewDiv.innerHTML = `
+        <p class="reviewNombre"><strong>${review.author_name}</strong> (${stars})</p>
+        <p class="review">${review.text}</p>
+        <p><em>Fecha de la reseña: ${new Date(review.time * 1000).toLocaleDateString()}</em></p>
+      `;
+      
+      reviewsContainer.appendChild(reviewDiv);
+    });
+  } else {
+    reviewsContainer.innerHTML = '<p>No hay reseñas disponibles.</p>';
+  }
+}
+
+// Función para crear las estrellas
+function createStars(rating) {
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    stars += i < rating ? '★' : '☆'; // Rellenar con estrellas o estrellas vacías
+  }
+  return stars;
+}
