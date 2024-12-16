@@ -290,8 +290,8 @@ body #consultorio .consultorioContainer .consultorioContainerDos .dots {
   gap: 10px;
 }
 body #consultorio .consultorioContainer .consultorioContainerDos .dots .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: #bbb;
   border-radius: 50%;
   cursor: pointer;

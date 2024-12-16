@@ -159,7 +159,6 @@ const dots = document.querySelectorAll(".dot");
 // Contador para manejar el desplazamiento
 let currentIndex = 0;
 
-// Captura el ancho del contenedor del carrusel
 const carrouselContainer = document.querySelector(".consultorioCarrouselContainer");
 const containerWidth = carrouselContainer.offsetWidth;
 
@@ -167,17 +166,22 @@ const containerWidth = carrouselContainer.offsetWidth;
 chevronLeft.addEventListener("click", function () {
   if (currentIndex > 0) {
     currentIndex--;
-    updateCarrouselPosition();
+  } else {
+    // Si está en la primera foto y va a la izquierda, salta a la última
+    currentIndex = carrousel.children.length - 1;
   }
+  updateCarrouselPosition();
 });
 
 // Evento para mover a la derecha
 chevronRight.addEventListener("click", function () {
-  // Asegura que no se desplace más allá del contenido
   if (currentIndex < carrousel.children.length - 1) {
     currentIndex++;
-    updateCarrouselPosition();
+  } else {
+    // Si está en la última foto y va a la derecha, salta a la primera
+    currentIndex = 0;
   }
+  updateCarrouselPosition();
 });
 
 // Función para actualizar la posición del carrusel
@@ -198,10 +202,28 @@ function updateDots() {
   });
 }
 
-// Inicialización para que los dots reflejen la imagen actual
+// Función para el cambio automático
+function autoSlide() {
+  currentIndex = (currentIndex + 1) % carrousel.children.length; // Avanza al siguiente índice o vuelve al inicio
+  updateCarrouselPosition();
+}
+
+// Inicia el carrusel automático
+const autoSlideInterval = setInterval(autoSlide, 5000);
+
+// Detener el auto-slide mientras interactúas con las flechas
+chevronLeft.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+chevronRight.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+
+// Reinicia el auto-slide después de interactuar
+chevronLeft.addEventListener("mouseleave", () => setInterval(autoSlide, 5000));
+chevronRight.addEventListener("mouseleave", () => setInterval(autoSlide, 5000));
+
+// Inicialización
 updateDots();
 
 const carrouselFotos = new CarrouselFotos();
+
 
 //////////////////////////////////////////// Preguntas Frecuentes
 
