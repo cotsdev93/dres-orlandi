@@ -3,92 +3,127 @@ body {
     #pacientes {
       width: 100%;
       height: auto;
-      //   border: solid 1px red;
+      h2 {
+        margin: 15px;
+        font-size: 30px;
+        font-weight: 600;
+        color: $grisOscuro;
+        text-align: center;
+        padding-bottom: 10px;
+      }
       .pacientesContainer {
-        // width: 100%;
-        // height: 200px;
-        // border: solid 1px blue;
-        // display: flex;
+        margin: 5px 20px;
+        overflow-x: auto;
+        position: relative;
+        display: flex; /* Para asegurar que los elementos dentro estén alineados de forma adecuada */
+      
+        /* Contenedor de las flechas */
+        .fa-solid {
+          position: absolute;
+          top: 50%; 
+          transform: translateY(-50%);
+          font-size: 15px; /* Ajusta el tamaño de las flechas */
+          color: #333; /* Color predeterminado de las flechas */
+          cursor: pointer;
+          z-index: 10; /* Asegura que las flechas estén sobre el contenido */
+          transition: color 0.3s ease; /* Transición suave para cambio de color */
+        }
+      
+        .fa-chevron-left {
+          left: 10px; /* Posición de la flecha izquierda */
+        }
+      
+        .fa-chevron-right {
+          right: 10px; /* Posición de la flecha derecha */
+        }
+      
+        .fa-solid:hover {
+          color: #f4c150; /* Cambio de color al pasar el mouse */
+        }
+      
         #reviewsContainer {
           display: flex;
           font-family: Arial, sans-serif;
-          overflow: hidden;
-          height: 200px;
-
+          gap: 5px; /* Espacio entre las reseñas */
+          padding: 10px 0; /* Espaciado arriba y abajo */
+          flex-wrap: nowrap; /* Evita que las reseñas se envuelvan a la siguiente línea */
+          overflow-x: auto; /* Permite desplazarse horizontalmente */
+      
           .reviewDetailsContainer {
             border: solid 0.5px $grisClaro;
-            margin: 10px;
-            width: 200px;
+            margin: 5px;
+            width: 285px;
             border-radius: 10px;
-            // display: flex;
             max-height: 190px;
+            border-bottom: 5px solid $grisClaro;
+            background-color: #fff; /* Fondo blanco para las reseñas */
+      
             a {
               color: $grisOscuro;
+              text-decoration: none; /* Quita el subrayado de los enlaces */
+      
               .reviewDetails {
                 display: flex;
                 align-items: center;
-
+                padding: 5px; /* Añadimos un padding pequeño para dar espacio */
+                // border: solid 1px red;
                 img {
                   width: 40px;
                   height: 40px;
                   border-radius: 50%;
                   margin: 4px;
                 }
+      
                 .nombreFechaContainer {
                   width: 70%;
-                  // border: solid 1px red;
                   display: flex;
                   flex-direction: column;
-                  // align-items: center;
-                  // justify-content: flex-start;
-
+                  padding-left: 10px;
+                  border-bottom: 1px solid $grisClaro;
+      
                   .nombre {
                     font-weight: bold;
                     font-size: 12px;
-                    //   margin: 5px;
-                    // border: solid 1px rgb(119, 53, 53);
-                  }
-                }
-                .fechaEstrellaContainer {
-                  // border: solid 1px red;
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: start;
-                  align-items: center;
-                  height: auto;
-                  //   border: solid 1px red;
-                  gap: 5px;
-                  .fecha {
                     color: $grisOscuro;
-                    font-size: 10px;
                   }
-                  .stars {
-                    color: #f4c150; // Color dorado para las estrellas
-                    font-size: 16px;
+      
+                  .fechaEstrellaContainer {
                     display: flex;
-                    gap: 2px;
-                    transform: translateY(-3px);
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    gap: 5px;
+      
+                    .fecha {
+                      color: $grisOscuro;
+                      font-size: 10px;
+                    }
+      
+                    .stars {
+                      color: #f4c150;
+                      font-size: 16px;
+                      display: flex;
+                      gap: 2px;
+                      transform: translateY(-3px);
+                    }
                   }
                 }
               }
             }
-
-            // .reviewEstrellaFecha {
-            //   display: flex;
-            //   justify-content: center;
-
+      
             .reviewText {
               font-size: 10px;
               line-height: 1.5;
               padding: 10px;
-              line-height: 10px;
+              color: $grisOscuro;
+              background-color: #f3f3f3; 
+              border-radius: 0px 0px 5px 5px;
+              
             }
-            // }
           }
-
-          // Estilo para mostrar cuando no hay reseñas
         }
       }
+      
     }
   }
 }

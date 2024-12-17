@@ -295,17 +295,17 @@ function displayReviews(reviews) {
         <div class="reviewDetails">
           ${avatar}
           <div class="nombreFechaContainer">
-                    <p class="nombre">${review.author_name}</p>
-                    <div class="fechaEstrellaContainer">  
-                    <p class="fecha">${new Date(
-                      review.time * 1000
-                    ).toLocaleDateString()}</p>
-                    <span class="stars">${stars}</span>
-                    </div>
-                    </div>
-                    </div>
-                    <p class="reviewText">${review.text}</p>
-                    </a>
+          <p class="nombre">${review.author_name}</p>
+          <div class="fechaEstrellaContainer">  
+          <p class="fecha">${new Date(
+            review.time * 1000
+          ).toLocaleDateString()}</p>
+          <span class="stars">${stars}</span>
+          </div>
+          </div>
+          </div>
+          <p class="reviewText">${review.text}</p>
+          </a>
       </div>
     `;
 
