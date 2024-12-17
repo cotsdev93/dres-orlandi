@@ -1,11 +1,11 @@
 [
   {
-    "img": "../assets/img/consultorio.jpg"
+    "img": "./assets/img/consultorio.jpg"
   },
   {
-    "img": "../assets/img/recepcion2.jpg"
+    "img": "./assets/img/recepcion2.jpg"
   },
   {
-    "img" : "../assets/img/recepcion.jpg"
+    "img" : "./assets/img/recepcion.jpg"
   }
 ]

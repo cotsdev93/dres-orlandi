@@ -323,8 +323,10 @@ const chevronRightPacientes = document.querySelector(".chevronRightPacientes");
 const reviewsContainer = document.getElementById("reviewsContainer");
 
 reviewsContainer.addEventListener("wheel", (event) => {
-  event.preventDefault(); // Evita el scroll nativo
-}, { passive: false }); // "passive: false" permite usar preventDefault()
+  if (Math.abs(event.deltaX) > 0) { // Verificar movimiento horizontal
+    event.preventDefault(); // Bloquear solo el desplazamiento horizontal
+  }
+}, { passive: false }); // Necesario para usar preventDefault()
 
 // Variables
 let currentScrollPosition = 0;
