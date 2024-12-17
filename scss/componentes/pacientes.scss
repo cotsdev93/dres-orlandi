@@ -42,11 +42,8 @@ body {
           display: flex;
           font-family: Arial, sans-serif;
           gap: 5px; 
-          // padding: 10px 0; 
           flex-wrap: nowrap;
           overflow-x: auto; 
-          // border: solid 1px red;
-
           .reviewDetailsContainer {
             border: solid 0.5px $grisClaro;
             margin: 5px;

@@ -193,7 +193,6 @@ for (const pregunta of preguntas) {
 
 let map;
 
-// Esta es la función que se ejecuta cuando la API de Maps se ha cargado correctamente
 function initMap() {
   const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
 
@@ -201,42 +200,40 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: location,
     zoom: 16,
-    disableDefaultUI: true, // Oculta los controles estándar
-    gestureHandling: "greedy", // Permite zoom y movimiento
+    disableDefaultUI: true, 
+    gestureHandling: "greedy",
     styles: [
       {
         featureType: "road",
         elementType: "geometry",
         stylers: [
           {
-            color: "#d5d5d5", // Color de los caminos
+            color: "#d5d5d5",
           },
         ],
       },
     ],
   });
 
-  // Place ID del lugar
   const placeId = "ChIJP0W_HXnHvJURGmfg0nBN2Lk";
 
-  // Usar PlacesService para obtener detalles del lugar
   const service = new google.maps.places.PlacesService(map);
 
   service.getDetails(
     {
       placeId: placeId,
-      fields: ["name", "formatted_address", "geometry", "reviews"], // Incluimos 'reviews' para obtener las reseñas
+      fields: ["name", "formatted_address", "geometry", "reviews"], 
     },
     (place, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        // Crear un marcador
+    
         const marker = new google.maps.Marker({
           position: place.geometry.location,
           map: map,
           title: place.name,
         });
 
-        // Configurar clic en el marcador para abrir Google Maps con el nombre del lugar
+      
         marker.addListener("click", () => {
           const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
             place.name
@@ -244,18 +241,14 @@ function initMap() {
           window.open(googleMapsURL, "_blank");
         });
 
-        // Opcional: Añadir una ventana informativa al marcador
         const infoWindow = new google.maps.InfoWindow({
           content: `<div><strong>${place.name}</strong><br>${place.formatted_address}</div>`,
         });
 
-        // Mostrar infoWindow automáticamente
         infoWindow.open(map, marker);
 
-        // Centrar el mapa en la ubicación del marcador
         map.setCenter(place.geometry.location);
 
-        // Llamar a la función para mostrar las reseñas
         if (place.reviews && place.reviews.length > 0) {
           displayReviews(place.reviews); // Mostrar las reseñas
         }
@@ -266,12 +259,10 @@ function initMap() {
   );
 }
 
-// Función para mostrar las reseñas en el HTML
 function displayReviews(reviews) {
   const reviewsContainer = document.getElementById("reviewsContainer");
-  reviewsContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar las reseñas
+  reviewsContainer.innerHTML = "";
 
-  // Limitar reseñas a un máximo de 10
   const limitedReviews = reviews.slice(0, 10);
 
   if (limitedReviews && limitedReviews.length > 0) {
@@ -284,7 +275,6 @@ function displayReviews(reviews) {
         ? `<img src="${review.profile_photo_url}" alt="${review.author_name}">`
         : `<img src="https://via.placeholder.com/50" alt="Avatar">`;
 
-      // Estrellas estilizadas
       const stars = createStars(review.rating);
 
       reviewDiv.innerHTML = `
@@ -319,7 +309,6 @@ function displayReviews(reviews) {
   }
 }
 
-// Función para crear estrellas estilizadas
 function createStars(rating) {
   const maxStars = 5;
   let stars = "";
@@ -330,6 +319,44 @@ function createStars(rating) {
 }
 
 const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");
-const chevronRghtPacientes = document.querySelector(".chevronRightPacientes");
+const chevronRightPacientes = document.querySelector(".chevronRightPacientes");
+const reviewsContainer = document.getElementById("reviewsContainer");
 
+// Variables
+let currentScrollPosition = 0;
+let scrollStep = getElementWidth() ; // Ancho de un elemento + gap
 
+// Función para obtener el ancho de un elemento
+function getElementWidth() {
+  const firstElement = reviewsContainer.querySelector(".reviewDetailsContainer");
+  return firstElement ? firstElement.offsetWidth : 300; // Default si no hay elementos
+}
+
+// Evento para la flecha derecha (avanzar)
+chevronRightPacientes.addEventListener("click", () => {
+  currentScrollPosition += scrollStep;
+
+  const maxScrollPosition = reviewsContainer.scrollWidth - reviewsContainer.clientWidth;
+  if (currentScrollPosition > maxScrollPosition) {
+    currentScrollPosition = maxScrollPosition; // Evita sobrepasar el límite derecho
+  }
+
+  reviewsContainer.scrollTo({
+    left: currentScrollPosition,
+    behavior: "smooth",
+  });
+});
+
+// Evento para la flecha izquierda (retroceder)
+chevronLeftPacientes.addEventListener("click", () => {
+  currentScrollPosition -= scrollStep;
+
+  if (currentScrollPosition < 0) {
+    currentScrollPosition = 0; // Evita sobrepasar el límite izquierdo
+  }
+
+  reviewsContainer.scrollTo({
+    left: currentScrollPosition,
+    behavior: "smooth",
+  });
+});
