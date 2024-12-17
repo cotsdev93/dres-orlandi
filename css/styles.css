@@ -183,35 +183,32 @@ body main #pacientes {
   height: auto;
 }
 body main #pacientes h2 {
-  margin: 15px;
+  margin: 20px;
   font-size: 30px;
   font-weight: 600;
   color: #464648;
   text-align: center;
-  padding-bottom: 10px;
 }
 body main #pacientes .pacientesContainer {
   margin: 5px 20px;
-  overflow-x: auto;
   position: relative;
-  display: flex; /* Para asegurar que los elementos dentro estén alineados de forma adecuada */
-  /* Contenedor de las flechas */
+  display: flex;
 }
 body main #pacientes .pacientesContainer .fa-solid {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px; /* Ajusta el tamaño de las flechas */
-  color: #333; /* Color predeterminado de las flechas */
+  font-size: 15px;
+  color: #464648;
   cursor: pointer;
   z-index: 10; /* Asegura que las flechas estén sobre el contenido */
   transition: color 0.3s ease; /* Transición suave para cambio de color */
 }
 body main #pacientes .pacientesContainer .fa-chevron-left {
-  left: 10px; /* Posición de la flecha izquierda */
+  left: -10px; /* Posición de la flecha izquierda */
 }
 body main #pacientes .pacientesContainer .fa-chevron-right {
-  right: 10px; /* Posición de la flecha derecha */
+  right: -10px; /* Posición de la flecha derecha */
 }
 body main #pacientes .pacientesContainer .fa-solid:hover {
   color: #f4c150; /* Cambio de color al pasar el mouse */
@@ -219,10 +216,9 @@ body main #pacientes .pacientesContainer .fa-solid:hover {
 body main #pacientes .pacientesContainer #reviewsContainer {
   display: flex;
   font-family: Arial, sans-serif;
-  gap: 5px; /* Espacio entre las reseñas */
-  padding: 10px 0; /* Espaciado arriba y abajo */
-  flex-wrap: nowrap; /* Evita que las reseñas se envuelvan a la siguiente línea */
-  overflow-x: auto; /* Permite desplazarse horizontalmente */
+  gap: 5px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer {
   border: solid 0.5px #d5d5d5;
@@ -231,16 +227,16 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   border-radius: 10px;
   max-height: 190px;
   border-bottom: 5px solid #d5d5d5;
-  background-color: #fff; /* Fondo blanco para las reseñas */
+  background-color: #fff;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
   color: #464648;
-  text-decoration: none; /* Quita el subrayado de los enlaces */
+  text-decoration: none;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails {
   display: flex;
   align-items: center;
-  padding: 5px; /* Añadimos un padding pequeño para dar espacio */
+  padding: 5px;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails img {
   width: 40px;
@@ -285,6 +281,9 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   color: #464648;
   background-color: #f3f3f3;
   border-radius: 0px 0px 5px 5px;
+}
+body main #pacientes .pacientesContainer ::-webkit-scrollbar {
+  display: none;
 }
 
 body #consultorio {

@@ -289,25 +289,27 @@ function displayReviews(reviews) {
 
       reviewDiv.innerHTML = `
       <div class="reviewDetailsContainer">
-      <a href="${
-        review.author_url
-      }" target="_blank" rel="noopener noreferrer">
-        <div class="reviewDetails">
-          ${avatar}
-          <div class="nombreFechaContainer">
-          <p class="nombre">${review.author_name}</p>
-          <div class="fechaEstrellaContainer">  
-          <p class="fecha">${new Date(
-            review.time * 1000
-          ).toLocaleDateString()}</p>
-          <span class="stars">${stars}</span>
-          </div>
-          </div>
+        <a
+          href="${review.author_url}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="reviewDetails">
+            ${avatar}
+            <div class="nombreFechaContainer">
+              <p class="nombre">${review.author_name}</p>
+              <div class="fechaEstrellaContainer">
+                <p class="fecha">
+                  ${new Date(review.time * 1000).toLocaleDateString()}
+                </p>
+                <span class="stars">${stars}</span>
+              </div>
+            </div>
           </div>
           <p class="reviewText">${review.text}</p>
-          </a>
+        </a>
       </div>
-    `;
+      `;
 
       reviewsContainer.appendChild(reviewDiv);
     });
@@ -326,3 +328,8 @@ function createStars(rating) {
   }
   return stars;
 }
+
+const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");
+const chevronRghtPacientes = document.querySelector(".chevronRightPacientes");
+
+
