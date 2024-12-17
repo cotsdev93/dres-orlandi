@@ -322,6 +322,10 @@ const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");
 const chevronRightPacientes = document.querySelector(".chevronRightPacientes");
 const reviewsContainer = document.getElementById("reviewsContainer");
 
+reviewsContainer.addEventListener("wheel", (event) => {
+  event.preventDefault(); // Evita el scroll nativo
+}, { passive: false }); // "passive: false" permite usar preventDefault()
+
 // Variables
 let currentScrollPosition = 0;
 let scrollStep = getElementWidth() ; // Ancho de un elemento + gap
