@@ -1,4 +1,18 @@
-// Clase para manejar los servicios
+////////////////////////////////// NAV
+
+const toggleMenuH = document.querySelector(".toggleMenuH");
+const ul = document.querySelector("ul");
+const main = document.getElementById("main");
+
+toggleMenuH.addEventListener("click", () => {
+  // Togglear la clase 'move' en el ul
+  ul.classList.toggle("move");
+
+  // Togglear la clase 'blureado' en el body
+  main.classList.toggle("blureado");
+});
+
+///////////////////////////////// Clase para manejar los servicios
 class Servicios {
   constructor() {
     this.servicios = {}; // Cambié a un objeto para manejar múltiples categorías
@@ -200,7 +214,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: location,
     zoom: 16,
-    disableDefaultUI: true, 
+    disableDefaultUI: true,
     gestureHandling: "greedy",
     styles: [
       {
@@ -222,18 +236,16 @@ function initMap() {
   service.getDetails(
     {
       placeId: placeId,
-      fields: ["name", "formatted_address", "geometry", "reviews"], 
+      fields: ["name", "formatted_address", "geometry", "reviews"],
     },
     (place, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-    
         const marker = new google.maps.Marker({
           position: place.geometry.location,
           map: map,
           title: place.name,
         });
 
-      
         marker.addListener("click", () => {
           const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
             place.name
@@ -322,19 +334,26 @@ const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");
 const chevronRightPacientes = document.querySelector(".chevronRightPacientes");
 const reviewsContainer = document.getElementById("reviewsContainer");
 
-reviewsContainer.addEventListener("wheel", (event) => {
-  if (Math.abs(event.deltaX) > 0) { // Verificar movimiento horizontal
-    event.preventDefault(); // Bloquear solo el desplazamiento horizontal
-  }
-}, { passive: false }); // Necesario para usar preventDefault()
+reviewsContainer.addEventListener(
+  "wheel",
+  (event) => {
+    if (Math.abs(event.deltaX) > 0) {
+      // Verificar movimiento horizontal
+      event.preventDefault(); // Bloquear solo el desplazamiento horizontal
+    }
+  },
+  { passive: false }
+); // Necesario para usar preventDefault()
 
 // Variables
 let currentScrollPosition = 0;
-let scrollStep = getElementWidth() ; // Ancho de un elemento + gap
+let scrollStep = getElementWidth(); // Ancho de un elemento + gap
 
 // Función para obtener el ancho de un elemento
 function getElementWidth() {
-  const firstElement = reviewsContainer.querySelector(".reviewDetailsContainer");
+  const firstElement = reviewsContainer.querySelector(
+    ".reviewDetailsContainer"
+  );
   return firstElement ? firstElement.offsetWidth : 300; // Default si no hay elementos
 }
 
@@ -342,7 +361,8 @@ function getElementWidth() {
 chevronRightPacientes.addEventListener("click", () => {
   currentScrollPosition += scrollStep;
 
-  const maxScrollPosition = reviewsContainer.scrollWidth - reviewsContainer.clientWidth;
+  const maxScrollPosition =
+    reviewsContainer.scrollWidth - reviewsContainer.clientWidth;
   if (currentScrollPosition > maxScrollPosition) {
     currentScrollPosition = maxScrollPosition; // Evita sobrepasar el límite derecho
   }

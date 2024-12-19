@@ -3,6 +3,7 @@ body {
     #pacientes {
       width: 100%;
       height: auto;
+      
       h2 {
         margin: 20px;
         font-size: 30px;
@@ -10,6 +11,15 @@ body {
         color: $grisOscuro;
         text-align: center;
         
+      }
+      .textoPacientesContainer{
+        display: flex;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        .textoPacientes{
+          color: $grisClaro;
+        }
       }
       .pacientesContainer {
         margin: 5px 20px;

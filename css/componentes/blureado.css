@@ -1,0 +1,8 @@
+body main {
+  transition: filter 0.8s;
+}
+body main.blureado {
+  filter: blur(5px);
+}
+
+/*# sourceMappingURL=blureado.css.map */
