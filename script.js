@@ -204,13 +204,11 @@ for (const pregunta of preguntas) {
 }
 
 ////////////////////////////////////////////// Consultorios MAP
-
 let map;
 
 function initMap() {
   const location = { lat: -34.64087678885384, lng: -58.56284795125639 };
 
-  // Crear el mapa
   map = new google.maps.Map(document.getElementById("map"), {
     center: location,
     zoom: 16,
@@ -236,7 +234,13 @@ function initMap() {
   service.getDetails(
     {
       placeId: placeId,
-      fields: ["name", "formatted_address", "geometry", "reviews"],
+      fields: [
+        "name",
+        "formatted_address",
+        "geometry",
+        "reviews",
+        "user_ratings_total",
+      ],
     },
     (place, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -262,7 +266,12 @@ function initMap() {
         map.setCenter(place.geometry.location);
 
         if (place.reviews && place.reviews.length > 0) {
-          displayReviews(place.reviews); // Mostrar las reseñas
+          displayReviews(place.reviews);
+          displayCompanyInfo(
+            place.name,
+            place.reviews,
+            place.user_ratings_total
+          ); // Modificación: pasar `user_ratings_total`
         }
       } else {
         console.error("No se pudo obtener los detalles del lugar: " + status);
@@ -282,7 +291,6 @@ function displayReviews(reviews) {
       const reviewDiv = document.createElement("div");
       reviewDiv.classList.add("review");
 
-      // Avatar del autor o un placeholder si no hay imagen
       const avatar = review.profile_photo_url
         ? `<img src="${review.profile_photo_url}" alt="${review.author_name}">`
         : `<img src="https://via.placeholder.com/50" alt="Avatar">`;
@@ -325,9 +333,32 @@ function createStars(rating) {
   const maxStars = 5;
   let stars = "";
   for (let i = 1; i <= maxStars; i++) {
-    stars += i <= rating ? "★" : "☆"; // Estrella llena o vacía
+    stars += i <= rating ? "★" : "☆";
   }
   return stars;
+}
+
+function displayCompanyInfo(companyName, reviews, userRatingsTotal) {
+  const pacientesReviewsContainer = document.querySelector(".pacientesReviews");
+
+  const averageRating = calculateAverageRating(reviews);
+
+  const stars = createStars(averageRating);
+
+  pacientesReviewsContainer.innerHTML = `
+
+      <p class="companyName">${companyName}</p>
+      <div class="rating">
+        <span class="stars">${stars}</span>${averageRating}
+        <p class="userRatingsTotal">(${userRatingsTotal})</p>
+      </div>
+    
+    `;
+}
+
+function calculateAverageRating(reviews) {
+  const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+  return (totalRating / reviews.length).toFixed(1);
 }
 
 const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");

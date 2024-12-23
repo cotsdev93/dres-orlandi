@@ -306,6 +306,53 @@ body main #pacientes .textoPacientesContainer .textoPacientes {
 body main #pacientes .textoPacientesContainer .textoPacientes a {
   color: #79797A;
 }
+body main #pacientes a {
+  text-decoration: none;
+}
+body main #pacientes a .pacientesReviewsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  width: 350px;
+  height: 35px;
+  margin: auto;
+  background-color: #fff;
+  border: solid 0.1px #d5d5d5;
+}
+body main #pacientes a .pacientesReviewsContainer img {
+  width: 70px;
+}
+body main #pacientes a .pacientesReviewsContainer .pacientesReviews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  gap: 10px;
+}
+body main #pacientes a .pacientesReviewsContainer .pacientesReviews .companyName {
+  color: #464648;
+}
+body main #pacientes a .pacientesReviewsContainer .pacientesReviews .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: black;
+  font-weight: 500;
+}
+body main #pacientes a .pacientesReviewsContainer .pacientesReviews .stars {
+  color: #f4c150;
+  font-size: 18px;
+  display: flex;
+  gap: 2px;
+  transform: translateY(-3px);
+}
+body main #pacientes a .pacientesReviewsContainer .pacientesReviews .userRatingsTotal {
+  font-size: 10px;
+  color: #79797A;
+  font-weight: 400;
+}
 body main #pacientes .pacientesContainer {
   margin: 5px 20px;
   position: relative;
