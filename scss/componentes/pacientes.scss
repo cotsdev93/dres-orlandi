@@ -5,7 +5,7 @@ body {
       height: auto;
       
       h2 {
-        margin: 20px;
+        margin: 20px 0px 10px;
         font-size: 30px;
         font-weight: 600;
         color: $grisOscuro;
@@ -14,11 +14,15 @@ body {
       }
       .textoPacientesContainer{
         display: flex;
-        margin: 5px;
+        margin: 5px 50px 10px;
         align-items: center;
+        text-align: center;
         justify-content: center;
         .textoPacientes{
           color: $grisClaro;
+          a {
+            color:  $gris;
+          };
         }
       }
       .pacientesContainer {
