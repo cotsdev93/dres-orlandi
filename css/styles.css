@@ -60,6 +60,9 @@ body header nav .logoContainer {
 body header nav .logoContainer img {
   width: 100%;
 }
+body header nav .navigation {
+  display: none;
+}
 body header nav ul {
   display: flex;
   margin-right: 50px;
@@ -118,6 +121,7 @@ body header nav ul li a:not(:hover)::after {
     position: relative;
     margin-right: 30px;
     z-index: 3;
+    display: block;
   }
   body header nav .navigation .toggleMenuH {
     position: absolute;
@@ -134,26 +138,26 @@ body header nav ul li a:not(:hover)::after {
     position: relative;
     width: 25px;
     height: 3px;
-    background-color: #464648;
+    background-color: #79797A;
     border-radius: 10px;
     cursor: pointer;
     z-index: 2;
-    transition: 0.3s;
+    transition: 1s;
   }
   body header nav .navigation .menuH::before, body header nav .navigation .menuH::after {
     content: "";
     position: absolute;
     height: 3px;
     width: 25px;
-    background-color: #464648;
+    background-color: #79797A;
     border-radius: 10px;
     transition: 0.8s;
   }
   body header nav .navigation .menuH::before {
-    top: -10px;
+    top: -8px;
   }
   body header nav .navigation .menuH::after {
-    top: 10px;
+    top: 8px;
   }
   body header nav .navigation .toggleMenuH:checked ~ .menuH {
     background-color: transparent;
@@ -161,10 +165,14 @@ body header nav ul li a:not(:hover)::after {
   body header nav .navigation .toggleMenuH:checked ~ .menuH::before {
     transform: rotate(45deg);
     top: 0;
+    background-color: #464648;
+    height: 2px;
   }
   body header nav .navigation .toggleMenuH:checked ~ .menuH::after {
     transform: rotate(-45deg);
     top: 0;
+    background-color: #464648;
+    height: 2px;
   }
   body header nav ul {
     background-color: #d5d5d5;
