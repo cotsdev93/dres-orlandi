@@ -7,12 +7,12 @@ function animacionInicial() {
   setTimeout(() => {
     logoIntro.classList.add("logoIntroAnimation");
     setTimeout(() => {
-      logoIntro.style.transform = "translateX(-180%)";
+      logoIntro.style.transform = "translateX(-170%)";
       setTimeout(() => {
         intro.style.transform = "translateY(-85%)";
         setTimeout(() => {
           intro.style.opacity = "0";
-        }, 1400);
+        }, 1000);
       }, 1000);
     }, 1000);
     console.log("funca");
