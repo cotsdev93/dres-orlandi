@@ -1,0 +1,26 @@
+body {
+  position: relative;
+}
+body .intro {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f7f9f9, #e3e6e6 40%, #d1d4d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  transition: all 1.5s ease;
+}
+body .intro .logoIntro {
+  width: 300px;
+  transition: 1s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+body .intro .logoIntroAnimation {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/*# sourceMappingURL=intro.css.map */

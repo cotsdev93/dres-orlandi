@@ -1,3 +1,18 @@
+////////////////////////////////// INTRO
+
+const intro = document.querySelector(".intro")
+const logoIntro = document.querySelector(".logoIntro")
+
+function animacionInicial() {
+  setTimeout(() => {
+    logoIntro.classList.add("logoIntroAnimation")
+    // intro.style.transform = "translateX(-50px)"
+    console.log("funca")
+  }, 1000);
+}
+
+animacionInicial()
+
 ////////////////////////////////// NAV
 
 const toggleMenuH = document.querySelector(".toggleMenuH");
