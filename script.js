@@ -1,17 +1,25 @@
 ////////////////////////////////// INTRO
 
-const intro = document.querySelector(".intro")
-const logoIntro = document.querySelector(".logoIntro")
+const intro = document.querySelector(".intro");
+const logoIntro = document.querySelector(".logoIntro");
 
 function animacionInicial() {
   setTimeout(() => {
-    logoIntro.classList.add("logoIntroAnimation")
-    // intro.style.transform = "translateX(-50px)"
-    console.log("funca")
+    logoIntro.classList.add("logoIntroAnimation");
+    setTimeout(() => {
+      logoIntro.style.transform = "translateX(-180%)";
+      setTimeout(() => {
+        intro.style.transform = "translateY(-85%)";
+        setTimeout(() => {
+          intro.style.opacity = "0";
+        }, 1400);
+      }, 1000);
+    }, 1000);
+    console.log("funca");
   }, 1000);
 }
 
-animacionInicial()
+animacionInicial();
 
 ////////////////////////////////// NAV
 

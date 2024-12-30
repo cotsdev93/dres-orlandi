@@ -1,26 +1,17 @@
-body {
-  position: relative;
-}
-body .intro {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f7f9f9, #e3e6e6 40%, #d1d4d4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 10;
-  transition: all 1.5s ease;
-}
-body .intro .logoIntro {
-  width: 300px;
-  transition: 1s;
-  transform: scale(0.8);
-  opacity: 0;
-}
-body .intro .logoIntroAnimation {
-  transform: scale(1);
-  opacity: 1;
-}
+/* Error: Undefined variable.
+ *   ,
+ * 6 |     background-color: $blanco;
+ *   |                       ^^^^^^^
+ *   '
+ *   scss\componentes\intro.scss 6:23  root stylesheet */
 
-/*# sourceMappingURL=intro.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      background-color: $blanco;\d\a   \2502                        ^^^^^^^\a   \2575 \a   scss\\componentes\\intro.scss 6:23  root stylesheet";
+}
