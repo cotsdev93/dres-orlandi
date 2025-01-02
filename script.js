@@ -4,19 +4,33 @@ const intro = document.querySelector(".intro");
 const logoIntro = document.querySelector(".logoIntro");
 
 function animacionInicial() {
-  setTimeout(() => {
-    logoIntro.classList.add("logoIntroAnimation");
+  const isMobile = window.innerWidth < 737;
+  if (isMobile) {
     setTimeout(() => {
-      logoIntro.style.transform = "translateX(-170%)";
+      logoIntro.classList.add("logoIntroAnimation");
       setTimeout(() => {
-        intro.style.transform = "translateY(-85%)";
+        intro.style.transform = "translateY(-100%)";
         setTimeout(() => {
           intro.style.opacity = "0";
+        }, 1500);
+      }, 1500);
+      console.log("funca");
+    }, 10);
+  } else {
+    setTimeout(() => {
+      logoIntro.classList.add("logoIntroAnimation");
+      setTimeout(() => {
+        logoIntro.style.transform = "translateX(-170%)";
+        setTimeout(() => {
+          intro.style.transform = "translateY(-85%)";
+          setTimeout(() => {
+            intro.style.opacity = "0";
+          }, 1000);
         }, 1000);
       }, 1000);
+      console.log("funca");
     }, 1000);
-    console.log("funca");
-  }, 1000);
+  }
 }
 
 animacionInicial();
