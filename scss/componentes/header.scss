@@ -18,7 +18,7 @@ body {
           width: 100%;
         }
       }
-      .navigation{
+      .navigation {
         display: none;
       }
       ul {
@@ -103,7 +103,7 @@ body {
             right: 0;
             top: -10px;
           }
-        
+
           .menuH {
             position: relative;
             width: 25px;
@@ -113,7 +113,7 @@ body {
             cursor: pointer;
             z-index: 2;
             transition: 1s;
-        
+
             &::before,
             &::after {
               content: "";
@@ -124,16 +124,16 @@ body {
               border-radius: 10px;
               transition: 0.8s;
             }
-        
+
             &::before {
               top: -8px;
             }
-        
+
             &::after {
               top: 8px;
             }
           }
-        
+
           // Estilo cuando el checkbox está marcado
           .toggleMenuH:checked ~ .menuH {
             background-color: transparent; // Línea del medio desaparece
@@ -144,17 +144,16 @@ body {
               background-color: $grisOscuro;
               height: 2px;
             }
-        
+
             &::after {
               transform: rotate(-45deg);
               top: 0; // Centra la línea inferior
               background-color: $grisOscuro;
               height: 2px;
             }
-
           }
         }
-        
+
         ul {
           // border: solid 5px red;
           background-color: $grisClaro;
@@ -175,7 +174,7 @@ body {
           li {
             a {
               margin: 10px;
-              color: $grisMasCaro;
+              color: $grisMasClaro;
               cursor: pointer;
               position: relative;
               text-decoration: none; // Elimina subrayados predeterminados
@@ -184,7 +183,7 @@ body {
           }
         }
         .move {
-          top:0px;
+          top: 0px;
         }
       }
     }
