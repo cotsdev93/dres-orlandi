@@ -8,80 +8,112 @@ body {
         font-weight: 600;
         color: $grisOscuro;
       }
-      h3 {
-        font-size: 20px;
-        margin-top: 10px;
-        color: $gris;
-      }
-      p {
-        color: $gris;
-        padding: 10px 150px 20px 150px;
-      }
-      .serviciosEsteticos {
-        display: flex;
-        justify-content: center;
-        .servicioContainer {
-          width: 20%;
+      .container {
+        // position: relative;
+        margin-top: 20px;
+        // border: solid 1px red;
+        .textContainer {
+          // border: solid 1px blue;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          .imgContainer {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0px 0px 8px 1px #00000020;
-            .imgServicio {
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              object-fit: cover;
-              transition: 1s;
-              cursor: pointer;
-              &:hover {
-                transform: scale(1.2);
-              }
-            }
+          justify-content: center;
+          margin: 15px;
+          h3 {
+            font-size: 70px;
+            margin-top: 10px;
+            color: $grisClaro;
+            text-transform: uppercase;
+            z-index: -1;
+            letter-spacing: 4px;
+            width: 50%;
+            display: flex;
+ 
           }
-          h2 {
-            font-size: 17px;
-            font-weight: 500;
+          .estetica {
+            justify-content: flex-end;
+          }
+          .medicina {
+            justify-content: flex-start;
+          }
+          p {
             color: $gris;
+            padding: 0px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            // border: solid 1px red;
+            width: 50%;
             margin: 10px;
+          }
+          .pMedicina {
+            text-align: right;
           }
         }
-      }
-      .serviciosMedicos {
-        display: flex;
-        justify-content: center;
-        .servicioContainer {
-          width: 20%;
+        .serviciosEsteticos {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          .imgContainer {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0px 0px 8px 1px #00000020;
-            .imgServicio {
-              width: 100%;
-              height: 100%;
+          justify-content: center;
+          .servicioContainer {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .imgContainer {
+              width: 100px;
+              height: 100px;
               border-radius: 50%;
-              object-fit: cover;
-              transition: 1s;
-              cursor: pointer;
-              &:hover {
-                transform: scale(1.2);
+              overflow: hidden;
+              box-shadow: 0px 0px 8px 1px #00000020;
+              .imgServicio {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                transition: 1s;
+                cursor: pointer;
+                &:hover {
+                  transform: scale(1.2);
+                }
               }
             }
+            h2 {
+              font-size: 17px;
+              font-weight: 500;
+              color: $gris;
+              margin: 10px;
+            }
           }
-          h2 {
-            font-size: 17px;
-            font-weight: 500;
-            color: $gris;
-            margin: 10px;
+        }
+        .serviciosMedicos {
+          display: flex;
+          justify-content: center;
+          .servicioContainer {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .imgContainer {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              overflow: hidden;
+              box-shadow: 0px 0px 8px 1px #00000020;
+              .imgServicio {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                transition: 1s;
+                cursor: pointer;
+                &:hover {
+                  transform: scale(1.2);
+                }
+              }
+            }
+            h2 {
+              font-size: 17px;
+              font-weight: 500;
+              color: $gris;
+              margin: 10px;
+            }
           }
         }
       }
@@ -161,11 +193,11 @@ body {
           justify-content: center;
           flex-wrap: wrap;
           .servicioContainer {
-              // border: solid 1px red;
-              width: 50%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+            // border: solid 1px red;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             .imgContainer {
               width: 100px;
               height: 100px;
