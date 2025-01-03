@@ -182,3 +182,190 @@ body {
     }
   }
 }
+
+@media (max-width: 737px) {
+  body {
+    main {
+      #pacientes {
+        width: 100%;
+        height: auto;
+  
+        h2 {
+          margin: 20px 0px 10px;
+          font-size: 30px;
+          font-weight: 600;
+          color: $grisOscuro;
+          text-align: center;
+        }
+        .textoPacientesContainer {
+          display: flex;
+          margin: 5px 50px 10px;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          .textoPacientes {
+            color: $grisClaro;
+            a {
+              color: $gris;
+            }
+          }
+        }
+        a {
+          text-decoration: none;
+          .pacientesReviewsContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 5px;
+            width: 350px;
+            height: 35px;
+            margin: auto;
+            background-color: #fff;
+            border: solid 0.1px $grisClaro;
+            img {
+              width: 70px;
+            }
+            .pacientesReviews {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: auto;
+              gap: 10px;
+              .companyName {
+                color: $grisOscuro;
+              }
+              .rating {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                color: black;
+                font-weight: 500;
+              }
+  
+              .stars {
+                color: #f4c150;
+                font-size: 18px;
+                display: flex;
+                gap: 2px;
+                transform: translateY(-3px);
+              }
+              .userRatingsTotal {
+                font-size: 10px;
+                color: $gris;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        .pacientesContainer {
+          margin: 5px 20px;
+          position: relative;
+          display: flex;
+          .fa-solid {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            color: $grisOscuro;
+            cursor: pointer;
+            z-index: 10; /* Asegura que las flechas estén sobre el contenido */
+            transition: color 0.3s ease; /* Transición suave para cambio de color */
+          }
+  
+          .fa-chevron-left {
+            left: -10px; /* Posición de la flecha izquierda */
+          }
+  
+          .fa-chevron-right {
+            right: -10px; /* Posición de la flecha derecha */
+          }
+  
+          .fa-solid:hover {
+            color: #f4c150; /* Cambio de color al pasar el mouse */
+          }
+  
+          #reviewsContainer {
+            display: flex;
+            font-family: Arial, sans-serif;
+            gap: 5px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            .reviewDetailsContainer {
+              border: solid 0.5px $grisClaro;
+              margin: 5px;
+              width: 285px;
+              border-radius: 10px;
+              max-height: 190px;
+              border-bottom: 5px solid $grisClaro;
+              background-color: #fff;
+  
+              a {
+                color: $grisOscuro;
+                text-decoration: none;
+                .reviewDetails {
+                  display: flex;
+                  align-items: center;
+                  padding: 5px;
+                  img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin: 4px;
+                  }
+  
+                  .nombreFechaContainer {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 10px;
+                    border-bottom: 1px solid $grisClaro;
+  
+                    .nombre {
+                      font-weight: bold;
+                      font-size: 12px;
+                      color: $grisOscuro;
+                    }
+  
+                    .fechaEstrellaContainer {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: start;
+                      align-items: center;
+                      gap: 5px;
+  
+                      .fecha {
+                        color: $grisOscuro;
+                        font-size: 10px;
+                      }
+  
+                      .stars {
+                        color: #f4c150;
+                        font-size: 16px;
+                        display: flex;
+                        gap: 2px;
+                        transform: translateY(-3px);
+                      }
+                    }
+                  }
+                }
+              }
+  
+              .reviewText {
+                font-size: 10px;
+                line-height: 1.5;
+                padding: 10px;
+                color: $grisOscuro;
+                background-color: #f3f3f3;
+                border-radius: 0px 0px 5px 5px;
+              }
+            }
+          }
+          ::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -122,6 +122,9 @@ body {
                 font-size: 17px;
                 // color: red;
               }
+              .productosPiel {
+                font-size: 15px;
+              }
               .flechaPregunta {
                 width: 9px;
                 transition: 1s;
@@ -144,6 +147,7 @@ body {
               p {
                 color: $grisOscuro;
               }
+              
             }
             &.expandida {
               height: 100px;
@@ -152,7 +156,7 @@ body {
         }
         .textoPreguntasContainer {
           display: flex;
-          margin: 20px;
+          margin: 20px 0px;
           align-items: center;
           
           .textoPreguntas {
