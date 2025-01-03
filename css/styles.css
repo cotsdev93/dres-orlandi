@@ -513,11 +513,12 @@ body main #pacientes a .pacientesReviewsContainer .pacientesReviews {
 }
 body main #pacientes a .pacientesReviewsContainer .pacientesReviews .companyName {
   color: #464648;
+  font-weight: 600;
 }
 body main #pacientes a .pacientesReviewsContainer .pacientesReviews .rating {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   color: black;
   font-weight: 500;
 }
@@ -545,17 +546,17 @@ body main #pacientes .pacientesContainer .fa-solid {
   font-size: 15px;
   color: #464648;
   cursor: pointer;
-  z-index: 10; /* Asegura que las flechas estén sobre el contenido */
-  transition: color 0.3s ease; /* Transición suave para cambio de color */
+  z-index: 10;
+  transition: color 0.3s ease;
 }
 body main #pacientes .pacientesContainer .fa-chevron-left {
-  left: -10px; /* Posición de la flecha izquierda */
+  left: -10px;
 }
 body main #pacientes .pacientesContainer .fa-chevron-right {
-  right: -10px; /* Posición de la flecha derecha */
+  right: -10px;
 }
 body main #pacientes .pacientesContainer .fa-solid:hover {
-  color: #f4c150; /* Cambio de color al pasar el mouse */
+  color: #f4c150;
 }
 body main #pacientes .pacientesContainer #reviewsContainer {
   display: flex;
@@ -571,6 +572,7 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   border-radius: 10px;
   max-height: 190px;
   border-bottom: 5px solid #d5d5d5;
+  box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
   background-color: #fff;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
@@ -636,6 +638,13 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     height: auto;
     text-align: center;
   }
+  body main #pacientes h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #464648;
+    text-align: center;
+    padding-bottom: 0px;
+  }
   body main #pacientes .textoPacientesContainer {
     display: flex;
     flex-direction: column;
@@ -643,11 +652,10 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin: 10px 40px;
-    position: relative;
+    margin: 10px 20px;
   }
   body main #pacientes .textoPacientesContainer h3 {
-    font-size: 25px;
+    font-size: 26px;
     font-weight: 600;
     color: #464648;
     text-align: center;
@@ -656,14 +664,12 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     text-transform: uppercase;
     text-shadow: -1px 1px rgba(0, 0, 0, 0.1254901961);
     white-space: nowrap;
-    position: absolute;
-    top: -18px;
-    left: -20px;
+    padding-bottom: 5px;
   }
   body main #pacientes .textoPacientesContainer .textoPacientes {
     color: #79797A;
     z-index: 2;
-    text-align: right;
+    text-align: justify;
   }
   body main #pacientes .textoPacientesContainer .textoPacientes a {
     color: #79797A;

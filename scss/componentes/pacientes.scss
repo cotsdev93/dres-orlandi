@@ -3,11 +3,10 @@ body {
     #pacientes {
       width: 100%;
       height: auto;
-      // margin-top: 35px;
       text-align: center;
       padding: 20px;
-      h2{
-        font-size: 24px; // Tamaño más pequeño
+      h2 {
+        font-size: 24px;
         font-weight: 600;
         color: $grisOscuro;
         text-align: center;
@@ -21,7 +20,7 @@ body {
         text-align: center;
         justify-content: center;
         margin: 2px 70px 10px 70px;
-        // border: solid 1px red;
+
         h3 {
           font-size: 50px;
           font-weight: 600;
@@ -54,7 +53,6 @@ body {
           background-color: #fff;
           border: solid 0.1px $grisClaro;
           box-shadow: 0px 0px 6px 0.5px #00000020;
-          // border: solid 1px red;
           img {
             width: 70px;
           }
@@ -64,14 +62,15 @@ body {
             justify-content: space-between;
             width: auto;
             gap: 10px;
-            
+      
             .companyName {
               color: $grisOscuro;
+              font-weight: 600;
             }
             .rating {
               display: flex;
               align-items: center;
-              gap: 4px;
+              gap: 2px;
               color: black;
               font-weight: 500;
             }
@@ -95,7 +94,7 @@ body {
         margin: 5px 20px;
         position: relative;
         display: flex;
-        
+
         .fa-solid {
           position: absolute;
           top: 50%;
@@ -103,22 +102,22 @@ body {
           font-size: 15px;
           color: $grisOscuro;
           cursor: pointer;
-          z-index: 10; /* Asegura que las flechas estén sobre el contenido */
-          transition: color 0.3s ease; /* Transición suave para cambio de color */
+          z-index: 10;
+          transition: color 0.3s ease;
         }
-        
+
         .fa-chevron-left {
-          left: -10px; /* Posición de la flecha izquierda */
+          left: -10px;
         }
-        
+
         .fa-chevron-right {
-          right: -10px; /* Posición de la flecha derecha */
+          right: -10px;
         }
-        
+
         .fa-solid:hover {
-          color: #f4c150; /* Cambio de color al pasar el mouse */
+          color: #f4c150;
         }
-        
+
         #reviewsContainer {
           display: flex;
           font-family: Arial, sans-serif;
@@ -132,7 +131,8 @@ body {
             border-radius: 10px;
             max-height: 190px;
             border-bottom: 5px solid $grisClaro;
-      
+            box-shadow: 0px 0px 6px 0.5px #00000020;
+            
             background-color: #fff;
 
             a {
@@ -211,10 +211,13 @@ body {
         width: 100%;
         height: auto;
         text-align: center;
-        h3 {
-
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+          color: $grisOscuro;
+          text-align: center;
+          padding-bottom: 0px;
         }
-        
         .textoPacientesContainer {
           display: flex;
           flex-direction: column;
@@ -222,11 +225,9 @@ body {
           align-items: center;
           text-align: center;
           justify-content: center;
-          margin: 10px 40px;
-          // border: solid 1px red;
-          position: relative;
+          margin: 10px 20px;
           h3 {
-            font-size: 25px;
+            font-size: 26px;
             font-weight: 600;
             color: $grisOscuro;
             text-align: center;
@@ -235,14 +236,12 @@ body {
             text-transform: uppercase;
             text-shadow: -1px 1px #00000020;
             white-space: nowrap;
-            position: absolute;
-            top: -18px;
-            left: -20px;
+            padding-bottom: 5px;
           }
           .textoPacientes {
             color: $gris;
             z-index: 2;
-            text-align: right;
+            text-align: justify;
             // border: solid 1px red;
             a {
               color: $gris;
@@ -273,7 +272,7 @@ body {
               justify-content: space-between;
               width: auto;
               gap: 10px;
-              
+
               .companyName {
                 color: $grisOscuro;
               }
@@ -284,7 +283,7 @@ body {
                 color: black;
                 font-weight: 500;
               }
-  
+
               .stars {
                 color: #f4c150;
                 font-size: 18px;
@@ -304,7 +303,7 @@ body {
           margin: 5px 20px;
           position: relative;
           display: flex;
-          
+
           .fa-solid {
             position: absolute;
             top: 50%;
@@ -315,19 +314,19 @@ body {
             z-index: 10; /* Asegura que las flechas estén sobre el contenido */
             transition: color 0.3s ease; /* Transición suave para cambio de color */
           }
-          
+
           .fa-chevron-left {
             left: -10px; /* Posición de la flecha izquierda */
           }
-          
+
           .fa-chevron-right {
             right: -10px; /* Posición de la flecha derecha */
           }
-          
+
           .fa-solid:hover {
             color: #f4c150; /* Cambio de color al pasar el mouse */
           }
-          
+
           #reviewsContainer {
             display: flex;
             font-family: Arial, sans-serif;
@@ -341,9 +340,9 @@ body {
               border-radius: 10px;
               max-height: 190px;
               border-bottom: 5px solid $grisClaro;
-        
+
               background-color: #fff;
-  
+
               a {
                 color: $grisOscuro;
                 text-decoration: none;
@@ -357,32 +356,32 @@ body {
                     border-radius: 50%;
                     margin: 4px;
                   }
-  
+
                   .nombreFechaContainer {
                     width: 70%;
                     display: flex;
                     flex-direction: column;
                     padding-left: 10px;
                     border-bottom: 1px solid $grisClaro;
-  
+
                     .nombre {
                       font-weight: bold;
                       font-size: 12px;
                       color: $grisOscuro;
                     }
-  
+
                     .fechaEstrellaContainer {
                       display: flex;
                       flex-direction: row;
                       justify-content: start;
                       align-items: center;
                       gap: 5px;
-  
+
                       .fecha {
                         color: $grisOscuro;
                         font-size: 10px;
                       }
-  
+
                       .stars {
                         color: #f4c150;
                         font-size: 16px;
@@ -394,7 +393,7 @@ body {
                   }
                 }
               }
-  
+
               .reviewText {
                 font-size: 10px;
                 line-height: 1.5;
