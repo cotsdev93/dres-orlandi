@@ -449,23 +449,30 @@ body main #servicios .container .serviciosMedicos .servicioContainer h2 {
 body main #pacientes {
   width: 100%;
   height: auto;
-}
-body main #pacientes h2 {
-  margin: 20px 0px 10px;
-  font-size: 30px;
-  font-weight: 600;
-  color: #464648;
-  text-align: center;
+  margin-top: 35px;
 }
 body main #pacientes .textoPacientesContainer {
   display: flex;
-  margin: 5px 50px 10px;
+  flex-direction: column;
+  margin: 0px 70px;
   align-items: center;
   text-align: center;
   justify-content: center;
+  margin: 2px 70px 10px 70px;
+}
+body main #pacientes .textoPacientesContainer h2 {
+  font-size: 50px;
+  font-weight: 600;
+  color: #464648;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #d5d5d5;
+  text-transform: uppercase;
+  text-shadow: -1px 1px rgba(0, 0, 0, 0.1254901961);
 }
 body main #pacientes .textoPacientesContainer .textoPacientes {
-  color: #d5d5d5;
+  color: #79797A;
+  z-index: 2;
 }
 body main #pacientes .textoPacientesContainer .textoPacientes a {
   color: #79797A;
@@ -484,6 +491,7 @@ body main #pacientes a .pacientesReviewsContainer {
   margin: auto;
   background-color: #fff;
   border: solid 0.1px #d5d5d5;
+  box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
 }
 body main #pacientes a .pacientesReviewsContainer img {
   width: 70px;
@@ -618,23 +626,30 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
   body main #pacientes {
     width: 100%;
     height: auto;
-  }
-  body main #pacientes h2 {
-    margin: 20px 0px 10px;
-    font-size: 30px;
-    font-weight: 600;
-    color: #464648;
-    text-align: center;
+    margin-top: 35px;
   }
   body main #pacientes .textoPacientesContainer {
     display: flex;
-    margin: 5px 50px 10px;
+    flex-direction: column;
+    margin: 0px 70px;
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin: 2px 70px 10px 70px;
+  }
+  body main #pacientes .textoPacientesContainer h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #464648;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #d5d5d5;
+    text-transform: uppercase;
+    text-shadow: -1px 1px rgba(0, 0, 0, 0.1254901961);
   }
   body main #pacientes .textoPacientesContainer .textoPacientes {
-    color: #d5d5d5;
+    color: #79797A;
+    z-index: 2;
   }
   body main #pacientes .textoPacientesContainer .textoPacientes a {
     color: #79797A;
@@ -653,6 +668,7 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     margin: auto;
     background-color: #fff;
     border: solid 0.1px #d5d5d5;
+    box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
   }
   body main #pacientes a .pacientesReviewsContainer img {
     width: 70px;

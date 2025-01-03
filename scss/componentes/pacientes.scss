@@ -3,22 +3,29 @@ body {
     #pacientes {
       width: 100%;
       height: auto;
-
-      h2 {
-        margin: 20px 0px 10px;
-        font-size: 30px;
-        font-weight: 600;
-        color: $grisOscuro;
-        text-align: center;
-      }
+      margin-top: 35px;
       .textoPacientesContainer {
         display: flex;
-        margin: 5px 50px 10px;
+        flex-direction: column;
+        margin: 0px 70px;
         align-items: center;
         text-align: center;
         justify-content: center;
-        .textoPacientes {
+        margin: 2px 70px 10px 70px;
+        // border: solid 1px red;
+        h2 {
+          font-size: 50px;
+          font-weight: 600;
+          color: $grisOscuro;
+          text-align: center;
+          letter-spacing: 2px;
           color: $grisClaro;
+          text-transform: uppercase;
+          text-shadow: -1px 1px #00000020;
+        }
+        .textoPacientes {
+          color: $gris;
+          z-index: 2;
           a {
             color: $gris;
           }
@@ -37,6 +44,8 @@ body {
           margin: auto;
           background-color: #fff;
           border: solid 0.1px $grisClaro;
+          box-shadow: 0px 0px 6px 0.5px #00000020;
+          // border: solid 1px red;
           img {
             width: 70px;
           }
@@ -46,6 +55,7 @@ body {
             justify-content: space-between;
             width: auto;
             gap: 10px;
+            
             .companyName {
               color: $grisOscuro;
             }
@@ -76,6 +86,7 @@ body {
         margin: 5px 20px;
         position: relative;
         display: flex;
+        
         .fa-solid {
           position: absolute;
           top: 50%;
@@ -86,19 +97,19 @@ body {
           z-index: 10; /* Asegura que las flechas estén sobre el contenido */
           transition: color 0.3s ease; /* Transición suave para cambio de color */
         }
-
+        
         .fa-chevron-left {
           left: -10px; /* Posición de la flecha izquierda */
         }
-
+        
         .fa-chevron-right {
           right: -10px; /* Posición de la flecha derecha */
         }
-
+        
         .fa-solid:hover {
           color: #f4c150; /* Cambio de color al pasar el mouse */
         }
-
+        
         #reviewsContainer {
           display: flex;
           font-family: Arial, sans-serif;
@@ -112,6 +123,7 @@ body {
             border-radius: 10px;
             max-height: 190px;
             border-bottom: 5px solid $grisClaro;
+      
             background-color: #fff;
 
             a {
@@ -189,22 +201,29 @@ body {
       #pacientes {
         width: 100%;
         height: auto;
-  
-        h2 {
-          margin: 20px 0px 10px;
-          font-size: 30px;
-          font-weight: 600;
-          color: $grisOscuro;
-          text-align: center;
-        }
+        margin-top: 35px;
         .textoPacientesContainer {
           display: flex;
-          margin: 5px 50px 10px;
+          flex-direction: column;
+          margin: 0px 70px;
           align-items: center;
           text-align: center;
           justify-content: center;
-          .textoPacientes {
+          margin: 2px 70px 10px 70px;
+          // border: solid 1px red;
+          h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: $grisOscuro;
+            text-align: center;
+            letter-spacing: 2px;
             color: $grisClaro;
+            text-transform: uppercase;
+            text-shadow: -1px 1px #00000020;
+          }
+          .textoPacientes {
+            color: $gris;
+            z-index: 2;
             a {
               color: $gris;
             }
@@ -223,6 +242,8 @@ body {
             margin: auto;
             background-color: #fff;
             border: solid 0.1px $grisClaro;
+            box-shadow: 0px 0px 6px 0.5px #00000020;
+            // border: solid 1px red;
             img {
               width: 70px;
             }
@@ -232,6 +253,7 @@ body {
               justify-content: space-between;
               width: auto;
               gap: 10px;
+              
               .companyName {
                 color: $grisOscuro;
               }
@@ -262,6 +284,7 @@ body {
           margin: 5px 20px;
           position: relative;
           display: flex;
+          
           .fa-solid {
             position: absolute;
             top: 50%;
@@ -272,19 +295,19 @@ body {
             z-index: 10; /* Asegura que las flechas estén sobre el contenido */
             transition: color 0.3s ease; /* Transición suave para cambio de color */
           }
-  
+          
           .fa-chevron-left {
             left: -10px; /* Posición de la flecha izquierda */
           }
-  
+          
           .fa-chevron-right {
             right: -10px; /* Posición de la flecha derecha */
           }
-  
+          
           .fa-solid:hover {
             color: #f4c150; /* Cambio de color al pasar el mouse */
           }
-  
+          
           #reviewsContainer {
             display: flex;
             font-family: Arial, sans-serif;
@@ -298,6 +321,7 @@ body {
               border-radius: 10px;
               max-height: 190px;
               border-bottom: 5px solid $grisClaro;
+        
               background-color: #fff;
   
               a {
