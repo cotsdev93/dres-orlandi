@@ -3,7 +3,16 @@ body {
     #pacientes {
       width: 100%;
       height: auto;
-      margin-top: 35px;
+      // margin-top: 35px;
+      text-align: center;
+      padding: 20px;
+      h2{
+        font-size: 24px; // Tamaño más pequeño
+        font-weight: 600;
+        color: $grisOscuro;
+        text-align: center;
+        padding-bottom: 10px;
+      }
       .textoPacientesContainer {
         display: flex;
         flex-direction: column;
@@ -13,7 +22,7 @@ body {
         justify-content: center;
         margin: 2px 70px 10px 70px;
         // border: solid 1px red;
-        h2 {
+        h3 {
           font-size: 50px;
           font-weight: 600;
           color: $grisOscuro;
@@ -201,18 +210,23 @@ body {
       #pacientes {
         width: 100%;
         height: auto;
-        margin-top: 35px;
+        text-align: center;
+        h3 {
+
+        }
+        
         .textoPacientesContainer {
           display: flex;
           flex-direction: column;
-          margin: 0px 70px;
+          margin: 0px;
           align-items: center;
           text-align: center;
           justify-content: center;
-          margin: 2px 70px 10px 70px;
+          margin: 10px 40px;
           // border: solid 1px red;
-          h2 {
-            font-size: 20px;
+          position: relative;
+          h3 {
+            font-size: 25px;
             font-weight: 600;
             color: $grisOscuro;
             text-align: center;
@@ -220,10 +234,16 @@ body {
             color: $grisClaro;
             text-transform: uppercase;
             text-shadow: -1px 1px #00000020;
+            white-space: nowrap;
+            position: absolute;
+            top: -18px;
+            left: -20px;
           }
           .textoPacientes {
             color: $gris;
             z-index: 2;
+            text-align: right;
+            // border: solid 1px red;
             a {
               color: $gris;
             }
