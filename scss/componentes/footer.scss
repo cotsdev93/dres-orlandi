@@ -108,14 +108,15 @@ body {
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 120px;
-        // border: solid 1px blue;
+        justify-content: center;
+        align-items: right;
+        height: auto;
+        margin-bottom: 20px;
         .logoContainer {
+          // border: solid 1px blue;
           margin-left: 0px;
           .logoFooter {
-            width: 200px;
+            width: 170px;
             transform: translateY(3px);
           }
         }
@@ -123,11 +124,11 @@ body {
           // border: solid 1px blue;
           display: flex;
           flex-direction: row;
-          justify-content: center;
+          justify-content: space-around;
           align-items: center;
           gap: 10px;
           margin-right: 0px;
-          margin: 15px;
+          // margin-top: 10px;
           .anmat {
             width: 100px;
           }
@@ -153,7 +154,7 @@ body {
         .newsletter {
           width: auto;
           height: 50px;
-          margin-left: 40px;
+          margin-left: 0px;
           // border: solid 1px red;
           color: $grisOscuro;
           display: flex;

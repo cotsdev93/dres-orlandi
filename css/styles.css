@@ -900,6 +900,87 @@ body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp:hover {
   color: green;
 }
 
+@media (max-width: 737px) {
+  body main #preguntasFrecuentes {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main #preguntasFrecuentes h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #464648;
+  }
+  body main #preguntasFrecuentes .preguntasContainer {
+    height: auto;
+    width: 90%;
+    margin-top: 20px;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer {
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    transition: 1s;
+    overflow: hidden;
+    border: solid 0.5px #f7f9f9;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta {
+    height: 30px;
+    background-color: #d5d5d5;
+    display: flex;
+    align-items: center;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta p {
+    color: #464648;
+    font-size: 17px;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta {
+    width: 9px;
+    transition: 1s;
+    margin: 5px;
+    filter: invert(15%) sepia(3%) saturate(88%) hue-rotate(180deg) brightness(95%) contrast(92%);
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .pregunta .flechaPregunta.rotada {
+    transform: rotate(90deg);
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .respuesta {
+    background-color: #efecec;
+    height: 70px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer .respuesta p {
+    color: #464648;
+  }
+  body main #preguntasFrecuentes .preguntasContainer .preguntaContainer.expandida {
+    height: 100px;
+  }
+  body main #preguntasFrecuentes .textoPreguntasContainer {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+  }
+  body main #preguntasFrecuentes .textoPreguntasContainer .textoPreguntas {
+    color: #79797A;
+    text-align: right;
+    margin-right: 10px;
+  }
+  body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp {
+    color: green;
+    margin: 5px;
+    transform: translateY(-3px);
+    transition: 0.5s;
+    font-size: 35px;
+  }
+  body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp:hover {
+    color: green;
+  }
+}
 body main {
   transition: filter 0.8s;
 }
@@ -1011,25 +1092,25 @@ body footer .section02 .newsletter .inputContainer button .fa-upload {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 120px;
+    justify-content: center;
+    align-items: right;
+    height: auto;
+    margin-bottom: 20px;
   }
   body footer .section01 .logoContainer {
     margin-left: 0px;
   }
   body footer .section01 .logoContainer .logoFooter {
-    width: 200px;
+    width: 170px;
     transform: translateY(3px);
   }
   body footer .section01 .logosAprobados {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 10px;
     margin-right: 0px;
-    margin: 15px;
   }
   body footer .section01 .logosAprobados .anmat {
     width: 100px;
@@ -1054,7 +1135,7 @@ body footer .section02 .newsletter .inputContainer button .fa-upload {
   body footer .section02 .newsletter {
     width: auto;
     height: 50px;
-    margin-left: 40px;
+    margin-left: 0px;
     color: #464648;
     display: flex;
     flex-direction: column;

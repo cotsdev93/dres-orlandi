@@ -83,3 +83,99 @@ body {
     }
   }
 }
+
+@media (max-width:737px) {
+  body {
+    main {
+      #preguntasFrecuentes {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+          font-size: 30px;
+          font-weight: 600;
+          color: $grisOscuro;
+        }
+        .preguntasContainer {
+          height: auto;
+          width: 90%;
+          margin-top: 20px;
+          .preguntaContainer {
+            width: 100%;
+            height: 30px;
+            cursor: pointer;
+            transition: 1s;
+            overflow: hidden;
+            border: solid 0.5px $blanco;
+            // background-color: red;
+            .pregunta {
+              height: 30px;
+              background-color: $grisClaro;
+              display: flex;
+              align-items: center;
+              
+              p {
+                color: $grisOscuro;
+                font-size: 17px;
+                // color: red;
+              }
+              .flechaPregunta {
+                width: 9px;
+                transition: 1s;
+                margin: 5px;
+                filter: invert(15%) sepia(3%) saturate(88%) hue-rotate(180deg)
+                  brightness(95%) contrast(92%);
+  
+                &.rotada {
+                  transform: rotate(90deg);
+                }
+              }
+            }
+            .respuesta {
+              background-color: $grisMasClaro;
+              height: 70px;
+              padding: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              p {
+                color: $grisOscuro;
+              }
+            }
+            &.expandida {
+              height: 100px;
+            }
+          }
+        }
+        .textoPreguntasContainer {
+          display: flex;
+          margin: 20px;
+          align-items: center;
+          
+          .textoPreguntas {
+            color: $gris;
+            text-align: right;
+            margin-right: 10px;
+            
+          }
+          a {
+            .fa-whatsapp {
+              color: green;
+              margin: 5px;
+              transform: translateY(-3px);
+              transition: 0.5s;
+              font-size: 35px;
+              &:hover {
+                color: green
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
