@@ -96,11 +96,9 @@ function cargarServiciosCategoria(listaServicios, selector) {
   }
 }
 
-///////////////////////////////////////////// CARROUSEL FOTOS
-
 class CarrouselFotos {
   constructor() {
-    this.fotos = []; // Inicializa fotos como un arreglo vacío.
+    this.fotos = [];
     this.cargarRegistros().then(() => {
       this.cargarFotos();
     });
@@ -111,72 +109,39 @@ class CarrouselFotos {
       const resultado = await fetch("./JSON/fotosConsultorios.JSON");
       this.fotos = await resultado.json();
     } catch (error) {
-      console.error("Error cargando las fotos:", error); // Este mensaje podría eliminarse si no es crucial.
+      console.error("Error cargando las fotos:", error);
     }
   }
 
   cargarFotos() {
-    const consultorioCarrousel = document.querySelector(
-      ".consultorioCarrousel"
-    );
-
-    consultorioCarrousel.innerHTML = ""; // Limpia el contenedor.
+    const consultorioCarrousel = document.querySelector(".consultorioCarrousel");
+    consultorioCarrousel.innerHTML = "";
 
     for (const foto of this.fotos) {
-      consultorioCarrousel.innerHTML += `
-      
-        <img src="${foto.img}" alt="">
-      
-      `;
+      consultorioCarrousel.innerHTML += `<img src="${foto.img}" alt="">`;
     }
   }
 }
 
-////////////////////////////////////////// CARROUSEL CONSULTORIO
+// Función para calcular el ancho dinámicamente
+function calcularAncho() {
+  return document.querySelector(".consultorioCarrouselContainer").offsetWidth;
+}
 
 const chevronLeft = document.querySelector(".fa-chevron-left");
 const chevronRight = document.querySelector(".fa-chevron-right");
 const carrousel = document.querySelector(".consultorioCarrousel");
 const dots = document.querySelectorAll(".dot");
 
-// Contador para manejar el desplazamiento
 let currentIndex = 0;
 
-const carrouselContainer = document.querySelector(
-  ".consultorioCarrouselContainer"
-);
-const containerWidth = carrouselContainer.offsetWidth;
-
-// Evento para mover a la izquierda
-chevronLeft.addEventListener("click", function () {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    // Si está en la primera foto y va a la izquierda, salta a la última
-    currentIndex = carrousel.children.length - 1;
-  }
-  updateCarrouselPosition();
-});
-
-// Evento para mover a la derecha
-chevronRight.addEventListener("click", function () {
-  if (currentIndex < carrousel.children.length - 1) {
-    currentIndex++;
-  } else {
-    // Si está en la última foto y va a la derecha, salta a la primera
-    currentIndex = 0;
-  }
-  updateCarrouselPosition();
-});
-
-// Función para actualizar la posición del carrusel
 function updateCarrouselPosition() {
+  const containerWidth = calcularAncho();
   const newTranslateX = -currentIndex * containerWidth;
   carrousel.style.transform = `translateX(${newTranslateX}px)`;
   updateDots();
 }
 
-// Función para actualizar el estado de los dots
 function updateDots() {
   dots.forEach((dot, index) => {
     if (index === currentIndex) {
@@ -187,31 +152,38 @@ function updateDots() {
   });
 }
 
-// Función para el cambio automático
+chevronLeft.addEventListener("click", function () {
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = carrousel.children.length - 1;
+  }
+  updateCarrouselPosition();
+});
+
+chevronRight.addEventListener("click", function () {
+  if (currentIndex < carrousel.children.length - 1) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
+  updateCarrouselPosition();
+});
+
 function autoSlide() {
-  currentIndex = (currentIndex + 1) % carrousel.children.length; // Avanza al siguiente índice o vuelve al inicio
+  currentIndex = (currentIndex + 1) % carrousel.children.length;
   updateCarrouselPosition();
 }
 
-// Inicia el carrusel automático
-const autoSlideInterval = setInterval(autoSlide, 5000);
+let autoSlideInterval = setInterval(autoSlide, 5000);
 
-// Detener el auto-slide mientras interactúas con las flechas
-chevronLeft.addEventListener("mouseenter", () =>
-  clearInterval(autoSlideInterval)
-);
-chevronRight.addEventListener("mouseenter", () =>
-  clearInterval(autoSlideInterval)
-);
+window.addEventListener("resize", () => {
+  updateCarrouselPosition(); // Recalcular en caso de resize
+});
 
-// Reinicia el auto-slide después de interactuar
-chevronLeft.addEventListener("mouseleave", () => setInterval(autoSlide, 5000));
-chevronRight.addEventListener("mouseleave", () => setInterval(autoSlide, 5000));
-
-// Inicialización
+new CarrouselFotos();
 updateDots();
 
-const carrouselFotos = new CarrouselFotos();
 
 //////////////////////////////////////////// Preguntas Frecuentes
 

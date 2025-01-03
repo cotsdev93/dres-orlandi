@@ -634,10 +634,22 @@ body #consultorio .consultorioContainer .consultorioContainerUno {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+body #consultorio .consultorioContainer .consultorioContainerUno h3 {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 50px;
+  color: #d5d5d5;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 body #consultorio .consultorioContainer .consultorioContainerUno p {
   color: #79797A;
-  padding: 10px 20px;
+  padding: 40px 20px 10px 20px;
+  text-align: right;
+  z-index: 1;
 }
 body #consultorio .consultorioContainer .consultorioContainerUno #map {
   width: 90%;
@@ -736,83 +748,66 @@ body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrol
     padding: 20px;
   }
   body #consultorio h2 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     color: #464648;
     text-align: center;
     padding-bottom: 10px;
   }
   body #consultorio .consultorioContainer {
-    display: flex;
+    display: block;
   }
   body #consultorio .consultorioContainer .consultorioContainerUno {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+  body #consultorio .consultorioContainer .consultorioContainerUno h3 {
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: #d5d5d5;
+    text-transform: uppercase;
+    text-shadow: -1px 1px rgba(0, 0, 0, 0.1254901961);
   }
   body #consultorio .consultorioContainer .consultorioContainerUno p {
     color: #79797A;
-    padding: 10px 20px;
+    padding: 15px 15px 10px 15px;
+    text-align: right;
+    z-index: 1;
   }
   body #consultorio .consultorioContainer .consultorioContainerUno #map {
-    width: 90%;
-    height: 250px;
+    width: 95%;
+    height: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     outline: none;
     border: #f7f9f9 1px solid;
   }
-  body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw-chr {
-    display: none;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw {
-    padding: 0px;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerUno #map .gm-style-iw .gm-style-iw-d {
-    width: 200px;
-    padding: 7px;
-    margin: 0px;
-    padding-bottom: 0px;
-    margin-right: -40px;
-  }
   body #consultorio .consultorioContainer .consultorioContainerDos {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 80vh;
     padding: 10px;
     position: relative;
   }
   body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-right,
   body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-left {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #f7f9f9;
-    opacity: 0.7;
-    font-size: 24px;
-    z-index: 10;
-    font-size: 15px;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-right {
-    right: 15px;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerDos .fa-chevron-left {
-    left: 15px;
+    font-size: 18px;
   }
   body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer {
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.2509803922);
   }
   body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel {
     display: flex;
@@ -821,30 +816,10 @@ body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrol
   body #consultorio .consultorioContainer .consultorioContainerDos .consultorioCarrouselContainer .consultorioCarrousel img {
     width: 100%;
     height: auto;
-    flex-shrink: 0;
     object-fit: cover;
   }
   body #consultorio .consultorioContainer .consultorioContainerDos .dots {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerDos .dots .dot {
-    width: 8px;
-    height: 8px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerDos .dots .dot.active {
-    background-color: #333;
-  }
-  body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrollbar {
-    display: none;
+    bottom: 10px;
   }
 }
 body main #preguntasFrecuentes {
@@ -1035,23 +1010,26 @@ body footer .section02 .newsletter .inputContainer button .fa-upload {
   body footer .section01 {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 120px;
   }
   body footer .section01 .logoContainer {
-    margin-left: 40px;
+    margin-left: 0px;
   }
   body footer .section01 .logoContainer .logoFooter {
-    width: 140px;
+    width: 200px;
     transform: translateY(3px);
   }
   body footer .section01 .logosAprobados {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-right: 40px;
+    margin-right: 0px;
+    margin: 15px;
   }
   body footer .section01 .logosAprobados .anmat {
     width: 100px;
@@ -1066,13 +1044,15 @@ body footer .section02 .newsletter .inputContainer button .fa-upload {
     margin: auto;
   }
   body footer .section02 {
-    height: 70px;
+    height: 100px;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   body footer .section02 .newsletter {
-    width: 25%;
+    width: auto;
     height: 50px;
     margin-left: 40px;
     color: #464648;
