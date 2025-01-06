@@ -518,7 +518,7 @@ body main #pacientes a .pacientesReviewsContainer .pacientesReviews .companyName
 body main #pacientes a .pacientesReviewsContainer .pacientesReviews .rating {
   display: flex;
   align-items: center;
-  gap: px;
+  gap: 5px;
   color: black;
   font-weight: 500;
 }
@@ -591,16 +591,17 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   margin: 4px;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
   border-bottom: 1px solid #d5d5d5;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .nombre {
   font-weight: bold;
   font-size: 12px;
   color: #464648;
+  display: flex;
+  justify-content: flex-start;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer {
   display: flex;

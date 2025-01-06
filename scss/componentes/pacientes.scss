@@ -62,7 +62,6 @@ body {
             justify-content: space-between;
             width: auto;
             gap: 10px;
-      
             .companyName {
               color: $grisOscuro;
               font-weight: 600;
@@ -70,7 +69,7 @@ body {
             .rating {
               display: flex;
               align-items: center;
-              gap: px;
+              gap: 5px;
               color: black;
               font-weight: 500;
             }
@@ -132,7 +131,7 @@ body {
             max-height: 190px;
             border-bottom: 5px solid $grisClaro;
             box-shadow: 0px 0px 6px 0.5px #00000020;
-            
+
             background-color: #fff;
 
             a {
@@ -150,16 +149,18 @@ body {
                 }
 
                 .nombreFechaContainer {
-                  width: 70%;
+                  width: 100%;
                   display: flex;
                   flex-direction: column;
-                  padding-left: 10px;
+
                   border-bottom: 1px solid $grisClaro;
 
                   .nombre {
                     font-weight: bold;
                     font-size: 12px;
                     color: $grisOscuro;
+                    display: flex;
+                    justify-content: flex-start;
                   }
 
                   .fechaEstrellaContainer {
@@ -277,7 +278,6 @@ body {
               // border: solid 1px red;
               .companyName {
                 color: $grisOscuro;
-                
               }
               .rating {
                 display: flex;
