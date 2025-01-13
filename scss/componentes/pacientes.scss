@@ -1,12 +1,9 @@
 body {
   main {
-    transition: all 1s;
     #pacientes {
       width: 100%;
-      height: auto;
-      text-align: center;
-      padding: 20px;
-      transition: height 1s;
+      padding: 20px 0px;
+      transition: max-height 1.5s ease; // Se agregó la transición para max-height en el contenedor padre.
       h2 {
         font-size: 24px;
         font-weight: 600;
@@ -140,9 +137,11 @@ body {
             box-shadow: 0px 0px 6px 0.5px #00000020;
             background-color: #fff;
             overflow: hidden;
-            transition: 1s;
+            transition: max-height 1.5s ease, box-shadow 1s ease; // Se agregó la transición aquí.
             &:hover {
-              max-height: 100%;
+            
+              box-shadow: 0px 0px 6px 1px #00000030;
+              max-height: 350px; // Altura cuando el mouse está encima.
             }
             a {
               color: $grisOscuro;
@@ -214,6 +213,7 @@ body {
     }
   }
 }
+
 
 @media (max-width: 737px) {
   body {

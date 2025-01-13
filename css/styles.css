@@ -446,15 +446,10 @@ body main #servicios .container .serviciosMedicos .servicioContainer h2 {
     margin: 10px 0px;
   }
 }
-body main {
-  transition: all 1s;
-}
 body main #pacientes {
   width: 100%;
-  height: auto;
-  text-align: center;
-  padding: 20px;
-  transition: height 1s;
+  padding: 20px 0px;
+  transition: max-height 1.5s ease;
 }
 body main #pacientes h2 {
   font-size: 24px;
@@ -582,10 +577,11 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
   background-color: #fff;
   overflow: hidden;
-  transition: 1s;
+  transition: max-height 1.5s ease, box-shadow 1s ease;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer:hover {
-  max-height: 100%;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1882352941);
+  max-height: 350px;
 }
 body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
   color: #464648;
