@@ -25,6 +25,7 @@ function animacionInicial() {
           intro.style.transform = "translateY(-85%)";
           setTimeout(() => {
             intro.style.opacity = "0";
+            intro.style.zIndex = "0"
           }, 1000);
         }, 1000);
       }, 1000);
