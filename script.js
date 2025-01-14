@@ -42,10 +42,7 @@ const ul = document.querySelector("ul");
 const main = document.getElementById("main");
 
 toggleMenuH.addEventListener("click", () => {
-  // Togglear la clase 'move' en el ul
   ul.classList.toggle("move");
-
-  // Togglear la clase 'blureado' en el body
   main.classList.toggle("blureado");
 });
 
@@ -70,10 +67,8 @@ class Servicios {
   }
 }
 
-// Instancia de la clase Servicios
 const servicios = new Servicios();
 
-// Función para cargar los servicios de una categoría específica
 function cargarServiciosCategoria(listaServicios, selector) {
   const contenedor = document.querySelector(selector);
 
@@ -82,9 +77,8 @@ function cargarServiciosCategoria(listaServicios, selector) {
     return;
   }
 
-  contenedor.innerHTML = ""; // Limpia el contenedor antes de agregar contenido
+  contenedor.innerHTML = ""; 
 
-  // Itera sobre la lista de servicios y genera el HTML
   for (const servicio of listaServicios) {
     contenedor.innerHTML += `
       <div class="servicioContainer">
@@ -123,7 +117,6 @@ class CarrouselFotos {
   }
 }
 
-// Función para calcular el ancho dinámicamente
 function calcularAncho() {
   return document.querySelector(".consultorioCarrouselContainer").offsetWidth;
 }
@@ -191,19 +184,17 @@ const preguntas = document.querySelectorAll(".preguntaContainer");
 
 for (const pregunta of preguntas) {
   pregunta.addEventListener("click", () => {
-    // Cierra cualquier pregunta que esté actualmente expandida
     for (const otraPregunta of preguntas) {
       if (otraPregunta !== pregunta) {
-        // Evita cerrar la que se acaba de hacer clic
-        otraPregunta.classList.remove("expandida"); // Remueve la clase expandida
+      
+        otraPregunta.classList.remove("expandida");
         const otraFlecha = otraPregunta.querySelector(".flechaPregunta");
         if (otraFlecha) {
-          otraFlecha.classList.remove("rotada"); // Asegura que la flecha se deshaga del giro
+          otraFlecha.classList.remove("rotada");
         }
       }
     }
 
-    // Alterna la expansión de la pregunta actual
     pregunta.classList.toggle("expandida");
     const flecha = pregunta.querySelector(".flechaPregunta");
     if (flecha) {
@@ -383,13 +374,12 @@ reviewsContainer.addEventListener(
     }
   },
   { passive: false }
-); // Necesario para usar preventDefault()
+);
 
 // Variables
 let currentScrollPosition = 0;
-let scrollStep = getElementWidth(); // Ancho de un elemento + gap
+let scrollStep = getElementWidth(); 
 
-// Función para obtener el ancho de un elemento
 function getElementWidth() {
   const firstElement = reviewsContainer.querySelector(
     ".reviewDetailsContainer"
@@ -397,7 +387,6 @@ function getElementWidth() {
   return firstElement ? firstElement.offsetWidth : 300; // Default si no hay elementos
 }
 
-// Evento para la flecha derecha (avanzar)
 chevronRightPacientes.addEventListener("click", () => {
   currentScrollPosition += scrollStep;
 
@@ -413,7 +402,6 @@ chevronRightPacientes.addEventListener("click", () => {
   });
 });
 
-// Evento para la flecha izquierda (retroceder)
 chevronLeftPacientes.addEventListener("click", () => {
   currentScrollPosition -= scrollStep;
 
@@ -426,3 +414,5 @@ chevronLeftPacientes.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+
