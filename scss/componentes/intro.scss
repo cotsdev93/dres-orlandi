@@ -24,22 +24,22 @@ body {
   }
 }
 
-// @media (max-width: 737px) {
-//   body {
-//     position: relative;
-//     .intro {
-//       height: 110vh;
-//       .logoIntro {
-//         width: 200px;
-//         transition: 1s;
-//         transform: scale(0.8);
-//         opacity: 0;
-//         position: absolute;
-//       }
-//       .logoIntroAnimation {
-//         transform: scale(1);
-//         opacity: 1;
-//       }
-//     }
-//   }
-// }
+@media (max-width: 737px) {
+  body {
+    position: relative;
+    .intro {
+      height: 110vh;
+      .logoIntro {
+        width: 200px;
+        transition: 1s;
+        transform: scale(0.8);
+        opacity: 0;
+        position: absolute;
+      }
+      .logoIntroAnimation {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}

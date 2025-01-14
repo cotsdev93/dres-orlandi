@@ -25,7 +25,7 @@ function animacionInicial() {
           intro.style.transform = "translateY(-85%)";
           setTimeout(() => {
             intro.style.opacity = "0";
-            intro.style.zIndex = "0"
+            intro.style.zIndex = "0";
           }, 1000);
         }, 1000);
       }, 1000);
@@ -48,6 +48,17 @@ toggleMenuH.addEventListener("click", () => {
 });
 
 ///////////////////////////////// Clase para manejar los servicios
+function correccionError() {
+  setTimeout(() => {
+    const aUna = document.querySelector(".aUna");  // Cambio para seleccionar la clase
+    if (aUna) { // Asegura que el elemento exista
+      aUna.style.opacity = "1";
+    }
+  }, 1000);
+}
+correccionError();
+
+
 class Servicios {
   constructor() {
     this.servicios = {}; // Cambié a un objeto para manejar múltiples categorías
@@ -78,7 +89,7 @@ function cargarServiciosCategoria(listaServicios, selector) {
     return;
   }
 
-  contenedor.innerHTML = ""; 
+  contenedor.innerHTML = "";
 
   for (const servicio of listaServicios) {
     contenedor.innerHTML += `
@@ -109,7 +120,9 @@ class CarrouselFotos {
   }
 
   cargarFotos() {
-    const consultorioCarrousel = document.querySelector(".consultorioCarrousel");
+    const consultorioCarrousel = document.querySelector(
+      ".consultorioCarrousel"
+    );
     consultorioCarrousel.innerHTML = "";
 
     for (const foto of this.fotos) {
@@ -178,7 +191,6 @@ window.addEventListener("resize", () => {
 new CarrouselFotos();
 updateDots();
 
-
 //////////////////////////////////////////// Preguntas Frecuentes
 
 const preguntas = document.querySelectorAll(".preguntaContainer");
@@ -187,7 +199,6 @@ for (const pregunta of preguntas) {
   pregunta.addEventListener("click", () => {
     for (const otraPregunta of preguntas) {
       if (otraPregunta !== pregunta) {
-      
         otraPregunta.classList.remove("expandida");
         const otraFlecha = otraPregunta.querySelector(".flechaPregunta");
         if (otraFlecha) {
@@ -379,7 +390,7 @@ reviewsContainer.addEventListener(
 
 // Variables
 let currentScrollPosition = 0;
-let scrollStep = getElementWidth(); 
+let scrollStep = getElementWidth();
 
 function getElementWidth() {
   const firstElement = reviewsContainer.querySelector(
@@ -415,5 +426,3 @@ chevronLeftPacientes.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
-
-

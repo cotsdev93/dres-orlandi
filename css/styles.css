@@ -996,6 +996,7 @@ body #consultorio .consultorioContainer .consultorioContainerDos ::-webkit-scrol
     padding: 15px 15px 10px 15px;
     text-align: right;
     z-index: 1;
+    opacity: 0;
   }
   body #consultorio .consultorioContainer .consultorioContainerUno #map {
     width: 95%;
@@ -1423,6 +1424,26 @@ body .intro .logoIntro {
 body .intro .logoIntroAnimation {
   transform: scale(1);
   opacity: 1;
+}
+
+@media (max-width: 737px) {
+  body {
+    position: relative;
+  }
+  body .intro {
+    height: 110vh;
+  }
+  body .intro .logoIntro {
+    width: 200px;
+    transition: 1s;
+    transform: scale(0.8);
+    opacity: 0;
+    position: absolute;
+  }
+  body .intro .logoIntroAnimation {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
