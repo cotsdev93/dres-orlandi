@@ -538,39 +538,44 @@ body main #pacientes .pacientesReviewsContainer a .pacientesReviews .userRatings
 }
 body main #pacientes .pacientesCarrouselContainer {
   position: relative;
-  border: solid 1px red;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
 }
 body main #pacientes .pacientesCarrouselContainer .fa-solid {
   position: absolute;
 }
 body main #pacientes .pacientesCarrouselContainer .fa-chevron-left {
-  top: 50%;
-  left: 5px;
+  top: 45%;
+  left: 7px;
 }
 body main #pacientes .pacientesCarrouselContainer .fa-chevron-right {
-  right: 5px;
-  top: 50%;
+  right: 7px;
+  top: 45%;
+}
+body main #pacientes .pacientesCarrouselContainer .displayNone {
+  display: none;
 }
 body main #pacientes .pacientesCarrouselContainer .fa-solid:hover {
   color: #f4c150;
 }
 body main #pacientes .pacientesCarrouselContainer .pacientesContainer {
-  margin: 5px 20px;
+  margin: 0px 20px;
   position: relative;
   display: flex;
-  border: solid 2px red;
+  width: 95%;
   overflow: hidden;
 }
 body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer {
   display: flex;
+  flex-wrap: nowrap;
   font-family: Arial, sans-serif;
+  width: auto;
+  overflow: auto;
   gap: 5px;
-  border: solid 2px blue;
 }
 body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer {
   border: solid 0.5px #d5d5d5;
-  margin: 5px;
-  width: 285px;
   border-radius: 10px;
   max-height: 120px;
   border-bottom: 5px solid #d5d5d5;
@@ -578,6 +583,7 @@ body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsCo
   background-color: #fff;
   overflow: hidden;
   transition: max-height 1.5s ease, box-shadow 1s ease;
+  width: 300px;
 }
 body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer:hover {
   box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1882352941);
@@ -631,7 +637,7 @@ body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsCo
 }
 body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer .reviewText {
   font-size: 10px;
-  line-height: 1.5;
+  line-height: 1.3;
   padding: 10px;
   color: #464648;
   background-color: #f3f3f3;

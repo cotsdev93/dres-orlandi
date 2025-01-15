@@ -50,14 +50,14 @@ toggleMenuH.addEventListener("click", () => {
 ///////////////////////////////// Clase para manejar los servicios
 function correccionError() {
   setTimeout(() => {
-    const aUna = document.querySelector(".aUna");  // Cambio para seleccionar la clase
-    if (aUna) { // Asegura que el elemento exista
+    const aUna = document.querySelector(".aUna"); // Cambio para seleccionar la clase
+    if (aUna) {
+      // Asegura que el elemento exista
       aUna.style.opacity = "1";
     }
   }, 1000);
 }
 correccionError();
-
 
 class Servicios {
   constructor() {
@@ -292,6 +292,8 @@ function initMap() {
   );
 }
 
+////////////////////////////////////// PACIENTES
+
 function displayReviews(reviews) {
   const reviewsContainer = document.getElementById("reviewsContainer");
   reviewsContainer.innerHTML = "";
@@ -372,19 +374,48 @@ function calculateAverageRating(reviews) {
   const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
   return (totalRating / reviews.length).toFixed(1);
 }
+///////// carrousel pacientes
 
-const chevronLeftPacientes = document.querySelector(".chevronLeftPacientes");
-const chevronRightPacientes = document.querySelector(".chevronRightPacientes");
-const reviewsContainer = document.getElementById("reviewsContainer");
+function initializeCarousel(chevronLeftSelector, chevronRightSelector, containerSelector, scrollAmount = 310, maxIndex = 4, minIndex = 0) {
+  const chevronLeftPacientes = document.querySelector(chevronLeftSelector);
+  const chevronRightPacientes = document.querySelector(chevronRightSelector);
+  const reviewsContainer = document.querySelector(containerSelector);
 
-reviewsContainer.addEventListener(
-  "wheel",
-  (event) => {
-    if (Math.abs(event.deltaX) > 0) {
-      // Verificar movimiento horizontal
-      event.preventDefault(); // Bloquear solo el desplazamiento horizontal
+  let indexCarrouselPacientes = 0; // Índice que se usa para saber la posición actual
+
+  // Mostrar el índice en consola (puedes ponerlo en un elemento HTML si lo prefieres)
+  console.log("Índice inicial:", indexCarrouselPacientes);
+
+  // Función para actualizar el índice y mover el carrusel
+  const updateCarousel = (direction) => {
+    // Actualizamos el índice según la dirección del desplazamiento
+    if (direction === 'left' && indexCarrouselPacientes > minIndex) {
+      indexCarrouselPacientes--; // Decrementamos el índice solo si no es el mínimo
+    } else if (direction === 'right' && indexCarrouselPacientes < maxIndex) {
+      indexCarrouselPacientes++; // Incrementamos el índice solo si no es el máximo
     }
-  },
-  { passive: false }
-);
 
+    // Desplazamos el carrusel basado en el índice
+    reviewsContainer.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+
+    // Mostrar el índice actualizado
+    console.log("Índice actualizado:", indexCarrouselPacientes);
+  };
+
+  // Desplazamiento hacia la izquierda
+  chevronLeftPacientes.addEventListener("click", () => {
+    updateCarousel('left');
+  });
+
+  // Desplazamiento hacia la derecha
+  chevronRightPacientes.addEventListener("click", () => {
+    updateCarousel('right');
+  });
+  
+}
+
+// Llamar a la función para inicializar el carrusel
+initializeCarousel(".chevronLeftPacientes", ".chevronRightPacientes", "#reviewsContainer");
