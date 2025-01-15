@@ -536,38 +536,38 @@ body main #pacientes .pacientesReviewsContainer a .pacientesReviews .userRatings
   color: #79797A;
   font-weight: 400;
 }
-body main #pacientes .pacientesContainer {
+body main #pacientes .pacientesCarrouselContainer {
+  position: relative;
+  border: solid 1px red;
+}
+body main #pacientes .pacientesCarrouselContainer .fa-solid {
+  position: absolute;
+}
+body main #pacientes .pacientesCarrouselContainer .fa-chevron-left {
+  top: 50%;
+  left: 5px;
+}
+body main #pacientes .pacientesCarrouselContainer .fa-chevron-right {
+  right: 5px;
+  top: 50%;
+}
+body main #pacientes .pacientesCarrouselContainer .fa-solid:hover {
+  color: #f4c150;
+}
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer {
   margin: 5px 20px;
   position: relative;
   display: flex;
+  border: solid 2px red;
+  overflow: hidden;
 }
-body main #pacientes .pacientesContainer .fa-solid {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 15px;
-  color: #464648;
-  cursor: pointer;
-  z-index: 10;
-  transition: color 0.3s ease;
-}
-body main #pacientes .pacientesContainer .fa-chevron-left {
-  left: -10px;
-}
-body main #pacientes .pacientesContainer .fa-chevron-right {
-  right: -10px;
-}
-body main #pacientes .pacientesContainer .fa-solid:hover {
-  color: #f4c150;
-}
-body main #pacientes .pacientesContainer #reviewsContainer {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer {
   display: flex;
   font-family: Arial, sans-serif;
   gap: 5px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  border: solid 2px blue;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer {
   border: solid 0.5px #d5d5d5;
   margin: 5px;
   width: 285px;
@@ -579,57 +579,57 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   overflow: hidden;
   transition: max-height 1.5s ease, box-shadow 1s ease;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer:hover {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer:hover {
   box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1882352941);
   max-height: 350px;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
   color: #464648;
   text-decoration: none;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails {
   display: flex;
   align-items: center;
   padding: 5px;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails img {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin: 4px;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #d5d5d5;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .nombre {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .nombre {
   font-weight: bold;
   font-size: 12px;
   color: #464648;
   display: flex;
   justify-content: flex-start;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 5px;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .fecha {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .fecha {
   color: #464648;
   font-size: 10px;
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .stars {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .stars {
   color: #f4c150;
   font-size: 16px;
   display: flex;
   gap: 2px;
   transform: translateY(-3px);
 }
-body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer .reviewText {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer .reviewText {
   font-size: 10px;
   line-height: 1.5;
   padding: 10px;
@@ -637,7 +637,7 @@ body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContain
   background-color: #f3f3f3;
   border-radius: 0px 0px 5px 5px;
 }
-body main #pacientes .pacientesContainer ::-webkit-scrollbar {
+body main #pacientes .pacientesCarrouselContainer .pacientesContainer ::-webkit-scrollbar {
   display: none;
 }
 
@@ -683,10 +683,7 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
   body main #pacientes .textoPacientesContainer .textoPacientes a {
     color: #79797A;
   }
-  body main #pacientes a {
-    text-decoration: none;
-  }
-  body main #pacientes a .pacientesReviewsContainer {
+  body main #pacientes .pacientesReviewsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -699,10 +696,13 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     border: solid 0.1px #d5d5d5;
     box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
   }
-  body main #pacientes a .pacientesReviewsContainer img {
+  body main #pacientes .pacientesReviewsContainer a {
+    text-decoration: none;
+  }
+  body main #pacientes .pacientesReviewsContainer a img {
     width: 70px;
   }
-  body main #pacientes a .pacientesReviewsContainer .pacientesReviews {
+  body main #pacientes .pacientesReviewsContainer a .pacientesReviews {
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -711,24 +711,24 @@ body main #pacientes .pacientesContainer ::-webkit-scrollbar {
     width: auto;
     gap: 0px;
   }
-  body main #pacientes a .pacientesReviewsContainer .pacientesReviews .companyName {
+  body main #pacientes .pacientesReviewsContainer a .pacientesReviews .companyName {
     color: #464648;
   }
-  body main #pacientes a .pacientesReviewsContainer .pacientesReviews .rating {
+  body main #pacientes .pacientesReviewsContainer a .pacientesReviews .rating {
     display: flex;
     align-items: center;
     gap: 4px;
     color: black;
     font-weight: 500;
   }
-  body main #pacientes a .pacientesReviewsContainer .pacientesReviews .stars {
+  body main #pacientes .pacientesReviewsContainer a .pacientesReviews .stars {
     color: #f4c150;
     font-size: 18px;
     display: flex;
     gap: 2px;
     transform: translateY(-3px);
   }
-  body main #pacientes a .pacientesReviewsContainer .pacientesReviews .userRatingsTotal {
+  body main #pacientes .pacientesReviewsContainer a .pacientesReviews .userRatingsTotal {
     font-size: 10px;
     color: #79797A;
     font-weight: 400;

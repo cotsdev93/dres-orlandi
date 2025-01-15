@@ -54,7 +54,7 @@ body {
           width: 100%;
           height: 100%;
           text-decoration: none;
-          // border: solid 1px red;
+
           transform: translateY(2px);
           img {
             width: 70px;
@@ -93,127 +93,127 @@ body {
           }
         }
       }
-      .pacientesContainer {
-        margin: 5px 20px;
+      .pacientesCarrouselContainer {
         position: relative;
-        display: flex;
-
+        border: solid 1px red;
         .fa-solid {
           position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 15px;
-          color: $grisOscuro;
-          cursor: pointer;
-          z-index: 10;
-          transition: color 0.3s ease;
         }
 
         .fa-chevron-left {
-          left: -10px;
+          top: 45%;
+          left: 5px;
         }
 
         .fa-chevron-right {
-          right: -10px;
+          right: 5px;
+          top: 45%;
         }
 
         .fa-solid:hover {
           color: #f4c150;
         }
-
-        #reviewsContainer {
+        .pacientesContainer {
+          margin: 5px 20px;
+          position: relative;
           display: flex;
-          font-family: Arial, sans-serif;
-          gap: 5px;
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          .reviewDetailsContainer {
-            border: solid 0.5px $grisClaro;
-            margin: 5px;
-            width: 285px;
-            border-radius: 10px;
-            max-height: 120px;
-            border-bottom: 5px solid $grisClaro;
-            box-shadow: 0px 0px 6px 0.5px #00000020;
-            background-color: #fff;
-            overflow: hidden;
-            transition: max-height 1.5s ease, box-shadow 1s ease; // Se agregó la transición aquí.
-            &:hover {
-            
-              box-shadow: 0px 0px 6px 1px #00000030;
-              max-height: 350px; // Altura cuando el mouse está encima.
-            }
-            a {
-              color: $grisOscuro;
-              text-decoration: none;
-              .reviewDetails {
-                display: flex;
-                align-items: center;
-                padding: 5px;
-                img {
-                  width: 40px;
-                  height: 40px;
-                  border-radius: 50%;
-                  margin: 4px;
-                }
+          border: solid 2px red;
+          overflow: hidden;
 
-                .nombreFechaContainer {
-                  width: 100%;
+          #reviewsContainer {
+            display: flex;
+            font-family: Arial, sans-serif;
+            gap: 5px;
+            // flex-wrap: nowrap;
+
+            border: solid 2px blue;
+
+            .reviewDetailsContainer {
+              border: solid 0.5px $grisClaro;
+              margin: 5px;
+              width: 285px;
+              border-radius: 10px;
+              max-height: 120px;
+              border-bottom: 5px solid $grisClaro;
+              box-shadow: 0px 0px 6px 0.5px #00000020;
+              background-color: #fff;
+              overflow: hidden;
+              transition: max-height 1.5s ease, box-shadow 1s ease; // Se agregó la transición aquí.
+              &:hover {
+                box-shadow: 0px 0px 6px 1px #00000030;
+                max-height: 350px; // Altura cuando el mouse está encima.
+              }
+              a {
+                color: $grisOscuro;
+                text-decoration: none;
+                .reviewDetails {
                   display: flex;
-                  flex-direction: column;
-
-                  border-bottom: 1px solid $grisClaro;
-
-                  .nombre {
-                    font-weight: bold;
-                    font-size: 12px;
-                    color: $grisOscuro;
-                    display: flex;
-                    justify-content: flex-start;
+                  align-items: center;
+                  padding: 5px;
+                  img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin: 4px;
                   }
 
-                  .fechaEstrellaContainer {
+                  .nombreFechaContainer {
+                    width: 100%;
                     display: flex;
-                    flex-direction: row;
-                    justify-content: start;
-                    align-items: center;
-                    gap: 5px;
+                    flex-direction: column;
 
-                    .fecha {
+                    border-bottom: 1px solid $grisClaro;
+
+                    .nombre {
+                      font-weight: bold;
+                      font-size: 12px;
                       color: $grisOscuro;
-                      font-size: 10px;
+                      display: flex;
+                      justify-content: flex-start;
                     }
 
-                    .stars {
-                      color: #f4c150;
-                      font-size: 16px;
+                    .fechaEstrellaContainer {
                       display: flex;
-                      gap: 2px;
-                      transform: translateY(-3px);
+                      flex-direction: row;
+                      justify-content: start;
+                      align-items: center;
+                      gap: 5px;
+
+                      .fecha {
+                        color: $grisOscuro;
+                        font-size: 10px;
+                      }
+
+                      .stars {
+                        color: #f4c150;
+                        font-size: 16px;
+                        display: flex;
+                        gap: 2px;
+                        transform: translateY(-3px);
+                      }
                     }
                   }
                 }
               }
-            }
 
-            .reviewText {
-              font-size: 10px;
-              line-height: 1.5;
-              padding: 10px;
-              color: $grisOscuro;
-              background-color: #f3f3f3;
-              border-radius: 0px 0px 5px 5px;
+              .reviewText {
+                font-size: 10px;
+                line-height: 1.5;
+                padding: 10px;
+                color: $grisOscuro;
+                background-color: #f3f3f3;
+                border-radius: 0px 0px 5px 5px;
+              }
             }
           }
-        }
-        ::-webkit-scrollbar {
-          display: none;
+          ::-webkit-scrollbar {
+            display: none;
+          }
         }
       }
     }
   }
 }
-
 
 @media (max-width: 737px) {
   body {
@@ -253,27 +253,25 @@ body {
             color: $gris;
             z-index: 2;
             text-align: justify;
-            // border: solid 1px red;
             a {
               color: $gris;
             }
           }
         }
-        a {
-          text-decoration: none;
-          .pacientesReviewsContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border-radius: 5px;
-            width: 250px;
-            height: auto;
-            margin: auto;
-            background-color: #fff;
-            border: solid 0.1px $grisClaro;
-            box-shadow: 0px 0px 6px 0.5px #00000020;
-            // border: solid 1px red;
+        .pacientesReviewsContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 5px;
+          width: 250px;
+          height: auto;
+          margin: auto;
+          background-color: #fff;
+          border: solid 0.1px $grisClaro;
+          box-shadow: 0px 0px 6px 0.5px #00000020;
+          a {
+            text-decoration: none;
             img {
               width: 70px;
             }
@@ -285,7 +283,7 @@ body {
               justify-content: center;
               width: auto;
               gap: 0px;
-              // border: solid 1px red;
+
               .companyName {
                 color: $grisOscuro;
               }
