@@ -41,10 +41,22 @@ animacionInicial();
 const toggleMenuH = document.querySelector(".toggleMenuH");
 const ul = document.querySelector("ul");
 const main = document.getElementById("main");
+const li = document.querySelectorAll("li");
 
 toggleMenuH.addEventListener("click", () => {
   ul.classList.toggle("move");
   main.classList.toggle("blureado");
+});
+
+li.forEach((opcion) => {
+  opcion.addEventListener("click", () => {
+    if (toggleMenuH.checked) {
+      toggleMenuH.checked = false; // Si está checked, lo desmarcamos
+    }
+    console.log("LI");
+    ul.classList.toggle("move");
+    main.classList.toggle("blureado");
+  });
 });
 
 ///////////////////////////////// Clase para manejar los servicios
@@ -376,7 +388,14 @@ function calculateAverageRating(reviews) {
 }
 ///////// carrousel pacientes
 
-function initializeCarousel(chevronLeftSelector, chevronRightSelector, containerSelector, scrollAmount = 310, maxIndex = 4, minIndex = 0) {
+function initializeCarousel(
+  chevronLeftSelector,
+  chevronRightSelector,
+  containerSelector,
+  scrollAmount = 310,
+  maxIndex = 4,
+  minIndex = 0
+) {
   const chevronLeftPacientes = document.querySelector(chevronLeftSelector);
   const chevronRightPacientes = document.querySelector(chevronRightSelector);
   const reviewsContainer = document.querySelector(containerSelector);
@@ -389,15 +408,15 @@ function initializeCarousel(chevronLeftSelector, chevronRightSelector, container
   // Función para actualizar el índice y mover el carrusel
   const updateCarousel = (direction) => {
     // Actualizamos el índice según la dirección del desplazamiento
-    if (direction === 'left' && indexCarrouselPacientes > minIndex) {
+    if (direction === "left" && indexCarrouselPacientes > minIndex) {
       indexCarrouselPacientes--; // Decrementamos el índice solo si no es el mínimo
-    } else if (direction === 'right' && indexCarrouselPacientes < maxIndex) {
+    } else if (direction === "right" && indexCarrouselPacientes < maxIndex) {
       indexCarrouselPacientes++; // Incrementamos el índice solo si no es el máximo
     }
 
     // Desplazamos el carrusel basado en el índice
     reviewsContainer.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
 
@@ -407,15 +426,18 @@ function initializeCarousel(chevronLeftSelector, chevronRightSelector, container
 
   // Desplazamiento hacia la izquierda
   chevronLeftPacientes.addEventListener("click", () => {
-    updateCarousel('left');
+    updateCarousel("left");
   });
 
   // Desplazamiento hacia la derecha
   chevronRightPacientes.addEventListener("click", () => {
-    updateCarousel('right');
+    updateCarousel("right");
   });
-  
 }
 
 // Llamar a la función para inicializar el carrusel
-initializeCarousel(".chevronLeftPacientes", ".chevronRightPacientes", "#reviewsContainer");
+initializeCarousel(
+  ".chevronLeftPacientes",
+  ".chevronRightPacientes",
+  "#reviewsContainer"
+);

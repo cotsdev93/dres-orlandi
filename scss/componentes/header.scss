@@ -137,7 +137,7 @@ body {
           // Estilo cuando el checkbox está marcado
           .toggleMenuH:checked ~ .menuH {
             background-color: transparent; // Línea del medio desaparece
-
+            
             &::before {
               transform: rotate(45deg);
               top: 0; // Centra la línea superior
