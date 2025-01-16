@@ -1438,6 +1438,7 @@ body .intro .logoIntroAnimation {
   }
   body .intro {
     height: 110vh;
+    z-index: 5;
   }
   body .intro .logoIntro {
     width: 200px;

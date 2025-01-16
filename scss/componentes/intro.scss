@@ -28,7 +28,7 @@ body {
   body {
     position: relative;
     .intro {
-      height: 110vh;
+      height: 110vh;z-index: 5;
       .logoIntro {
         width: 200px;
         transition: 1s;
