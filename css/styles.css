@@ -1194,7 +1194,7 @@ body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp:hover {
   }
   body main #preguntasFrecuentes .textoPreguntasContainer {
     display: flex;
-    margin: 20px 20px;
+    margin: 20px 10px;
     align-items: center;
   }
   body main #preguntasFrecuentes .textoPreguntasContainer .textoPreguntas {
