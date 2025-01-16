@@ -94,6 +94,14 @@ body {
       }
     }
   }
+  .sign {
+    background-color: $grisMasClaro;
+    display: flex;
+    justify-content: center;
+    font-family: "pixel", sans-serif;
+    color: $gris;
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 737px) {

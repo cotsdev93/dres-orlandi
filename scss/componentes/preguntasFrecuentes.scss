@@ -158,9 +158,8 @@ body {
         }
         .textoPreguntasContainer {
           display: flex;
-          margin: 20px 0px;
+          margin: 20px 20px;
           align-items: center;
-          
           .textoPreguntas {
             color: $gris;
             text-align: right;
@@ -183,5 +182,4 @@ body {
       }
     }
   }
-  
 }

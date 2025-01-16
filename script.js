@@ -48,16 +48,20 @@ toggleMenuH.addEventListener("click", () => {
   main.classList.toggle("blureado");
 });
 
-li.forEach((opcion) => {
-  opcion.addEventListener("click", () => {
-    if (toggleMenuH.checked) {
-      toggleMenuH.checked = false; // Si está checked, lo desmarcamos
-    }
-    console.log("LI");
-    ul.classList.toggle("move");
-    main.classList.toggle("blureado");
+const isMobile = window.innerWidth < 737;
+
+if (isMobile) {
+  li.forEach((opcion) => {
+    opcion.addEventListener("click", () => {
+      if (toggleMenuH.checked) {
+        toggleMenuH.checked = false; // Si está checked, lo desmarcamos
+      }
+      ul.classList.toggle("move");
+      main.classList.toggle("blureado");
+    });
   });
-});
+}
+
 
 ///////////////////////////////// Clase para manejar los servicios
 function correccionError() {

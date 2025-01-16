@@ -15,7 +15,7 @@ body {
 
 @font-face {
   font-family: "pixel";
-  src: url("../assets/font/VCR_OSD_MONO_1.001.ttf");
+  src: url("../assets/font/Early GameBoy.ttf");
 }
 html {
   /* Personalizar la barra de desplazamiento */
@@ -545,6 +545,7 @@ body main #pacientes .pacientesCarrouselContainer {
 }
 body main #pacientes .pacientesCarrouselContainer .fa-solid {
   position: absolute;
+  cursor: pointer;
 }
 body main #pacientes .pacientesCarrouselContainer .fa-chevron-left {
   top: 45%;
@@ -1193,7 +1194,7 @@ body main #preguntasFrecuentes .textoPreguntasContainer a .fa-whatsapp:hover {
   }
   body main #preguntasFrecuentes .textoPreguntasContainer {
     display: flex;
-    margin: 20px 0px;
+    margin: 20px 20px;
     align-items: center;
   }
   body main #preguntasFrecuentes .textoPreguntasContainer .textoPreguntas {
@@ -1309,6 +1310,14 @@ body footer .section02 .newsletter .inputContainer button .fa-upload {
   font-size: 10px;
   color: #79797A;
   transition: all 1s;
+}
+body .sign {
+  background-color: #efecec;
+  display: flex;
+  justify-content: center;
+  font-family: "pixel", sans-serif;
+  color: #79797A;
+  font-size: 10px;
 }
 
 @media (max-width: 737px) {
