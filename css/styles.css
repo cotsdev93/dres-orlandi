@@ -769,7 +769,7 @@ body main #pacientes .pacientesCarrouselContainer .pacientesContainer ::-webkit-
     height: auto;
     max-height: none;
     border-bottom: 5px solid #d5d5d5;
-    box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1254901961);
     background-color: #fff;
     overflow: auto;
     transition: max-height 1.5s ease, box-shadow 1s ease;
