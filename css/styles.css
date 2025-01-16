@@ -739,100 +739,102 @@ body main #pacientes .pacientesCarrouselContainer .pacientesContainer ::-webkit-
     color: #79797A;
     font-weight: 400;
   }
-  body main #pacientes .pacientesContainer {
-    margin: 5px 20px;
+  body main #pacientes .pacientesCarrouselContainer {
+    position: none;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  body main #pacientes .pacientesCarrouselContainer .fa-solid {
+    display: none;
+  }
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer {
+    margin: 5px 25px;
     position: relative;
     display: flex;
+    width: 100%;
+    overflow: hidden;
   }
-  body main #pacientes .pacientesContainer .fa-solid {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 15px;
-    color: #464648;
-    cursor: pointer;
-    z-index: 10; /* Asegura que las flechas estén sobre el contenido */
-    transition: color 0.3s ease; /* Transición suave para cambio de color */
-  }
-  body main #pacientes .pacientesContainer .fa-chevron-left {
-    left: -10px; /* Posición de la flecha izquierda */
-  }
-  body main #pacientes .pacientesContainer .fa-chevron-right {
-    right: -10px; /* Posición de la flecha derecha */
-  }
-  body main #pacientes .pacientesContainer .fa-solid:hover {
-    color: #f4c150; /* Cambio de color al pasar el mouse */
-  }
-  body main #pacientes .pacientesContainer #reviewsContainer {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer {
     display: flex;
-    font-family: Arial, sans-serif;
-    gap: 5px;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    font-family: Arial, sans-serif;
+    width: auto;
+    overflow: auto;
+    gap: 5px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer {
     border: solid 0.5px #d5d5d5;
-    margin: 5px;
-    width: 285px;
     border-radius: 10px;
-    max-height: 190px;
+    height: auto;
+    max-height: none;
     border-bottom: 5px solid #d5d5d5;
+    box-shadow: 0px 0px 6px 0.5px rgba(0, 0, 0, 0.1254901961);
     background-color: #fff;
+    overflow: auto;
+    transition: max-height 1.5s ease, box-shadow 1s ease;
+    width: 300px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer:hover {
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1882352941);
+    max-height: none;
+  }
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a {
     color: #464648;
     text-decoration: none;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails {
     display: flex;
     align-items: center;
     padding: 5px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails img {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin: 4px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer {
-    width: 70%;
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
     border-bottom: 1px solid #d5d5d5;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .nombre {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .nombre {
     font-weight: bold;
     font-size: 12px;
     color: #464648;
+    display: flex;
+    justify-content: flex-start;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer {
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
     gap: 5px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .fecha {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .fecha {
     color: #464648;
     font-size: 10px;
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .stars {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer a .reviewDetails .nombreFechaContainer .fechaEstrellaContainer .stars {
     color: #f4c150;
     font-size: 16px;
     display: flex;
     gap: 2px;
     transform: translateY(-3px);
   }
-  body main #pacientes .pacientesContainer #reviewsContainer .reviewDetailsContainer .reviewText {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer #reviewsContainer .reviewDetailsContainer .reviewText {
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 1.3;
     padding: 10px;
     color: #464648;
     background-color: #f3f3f3;
     border-radius: 0px 0px 5px 5px;
+    height: 100%;
   }
-  body main #pacientes .pacientesContainer ::-webkit-scrollbar {
+  body main #pacientes .pacientesCarrouselContainer .pacientesContainer ::-webkit-scrollbar {
     display: none;
   }
 }

@@ -322,113 +322,118 @@ body {
             }
           }
         }
-        .pacientesContainer {
-          margin: 5px 20px;
-          position: relative;
+        .pacientesCarrouselContainer {
+          position: none;
+          margin-top: 5px;
           display: flex;
-
+          justify-content: center;
+  
           .fa-solid {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 15px;
-            color: $grisOscuro;
-            cursor: pointer;
-            z-index: 10; /* Asegura que las flechas estén sobre el contenido */
-            transition: color 0.3s ease; /* Transición suave para cambio de color */
-          }
 
-          .fa-chevron-left {
-            left: -10px; /* Posición de la flecha izquierda */
+            display: none;
           }
-
-          .fa-chevron-right {
-            right: -10px; /* Posición de la flecha derecha */
-          }
-
-          .fa-solid:hover {
-            color: #f4c150; /* Cambio de color al pasar el mouse */
-          }
-
-          #reviewsContainer {
+  
+          .pacientesContainer {
+            margin: 5px 25px;
+            position: relative;
             display: flex;
-            font-family: Arial, sans-serif;
-            gap: 5px;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            .reviewDetailsContainer {
-              border: solid 0.5px $grisClaro;
-              margin: 5px;
-              width: 285px;
-              border-radius: 10px;
-              max-height: 190px;
-              border-bottom: 5px solid $grisClaro;
-
-              background-color: #fff;
-
-              a {
-                color: $grisOscuro;
-                text-decoration: none;
-                .reviewDetails {
-                  display: flex;
-                  align-items: center;
-                  padding: 5px;
-                  img {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    margin: 4px;
-                  }
-
-                  .nombreFechaContainer {
-                    width: 70%;
+            // border: solid 2px rgb(31, 183, 46);
+            width: 100%;
+            overflow: hidden;
+  
+            #reviewsContainer {
+              display: flex;
+              flex-wrap: nowrap;
+              font-family: Arial, sans-serif;
+              width: auto;
+              overflow: auto;
+              // border: solid 5px blue;
+              gap: 5px;
+              .reviewDetailsContainer {
+                border: solid 0.5px $grisClaro;
+                border-radius: 10px;
+                height: auto;
+                max-height: none;
+                border-bottom: 5px solid $grisClaro;
+                box-shadow: 0px 0px 6px 0.5px #00000020;
+                background-color: #fff;
+                overflow: auto;
+                transition: max-height 1.5s ease, box-shadow 1s ease;
+                // border: solid 1px pink;
+                width: 300px;
+                &:hover {
+                  box-shadow: 0px 0px 6px 1px #00000030;
+                  max-height: none;
+                }
+  
+                a {
+                  color: $grisOscuro;
+                  text-decoration: none;
+  
+                  .reviewDetails {
                     display: flex;
-                    flex-direction: column;
-                    padding-left: 10px;
-                    border-bottom: 1px solid $grisClaro;
-
-                    .nombre {
-                      font-weight: bold;
-                      font-size: 12px;
-                      color: $grisOscuro;
+                    align-items: center;
+                    padding: 5px;
+  
+                    img {
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      margin: 4px;
                     }
-
-                    .fechaEstrellaContainer {
+  
+                    .nombreFechaContainer {
+                      width: 100%;
                       display: flex;
-                      flex-direction: row;
-                      justify-content: start;
-                      align-items: center;
-                      gap: 5px;
-
-                      .fecha {
+                      flex-direction: column;
+                      border-bottom: 1px solid $grisClaro;
+  
+                      .nombre {
+                        font-weight: bold;
+                        font-size: 12px;
                         color: $grisOscuro;
-                        font-size: 10px;
-                      }
-
-                      .stars {
-                        color: #f4c150;
-                        font-size: 16px;
                         display: flex;
-                        gap: 2px;
-                        transform: translateY(-3px);
+                        justify-content: flex-start;
+                      }
+  
+                      .fechaEstrellaContainer {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 5px;
+  
+                        .fecha {
+                          color: $grisOscuro;
+                          font-size: 10px;
+                        }
+  
+                        .stars {
+                          color: #f4c150;
+                          font-size: 16px;
+                          display: flex;
+                          gap: 2px;
+                          transform: translateY(-3px);
+                        }
                       }
                     }
                   }
                 }
-              }
-
-              .reviewText {
-                font-size: 10px;
-                line-height: 1.5;
-                padding: 10px;
-                color: $grisOscuro;
-                background-color: #f3f3f3;
-                border-radius: 0px 0px 5px 5px;
+  
+                .reviewText {
+                  font-size: 10px;
+                  line-height: 1.3;
+                  padding: 10px;
+                  color: $grisOscuro;
+                  background-color: #f3f3f3;
+                  border-radius: 0px 0px 5px 5px;
+                  height: 100%;
+                }
               }
             }
-          }
-          ::-webkit-scrollbar {
-            display: none;
+            ::-webkit-scrollbar {
+              display: none;
+            }
           }
         }
       }
