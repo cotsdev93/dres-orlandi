@@ -204,9 +204,21 @@ body header nav ul li a:not(:hover)::after {
     top: 0px;
   }
 }
+body main {
+  position: relative;
+}
 body main #servicios {
   text-align: center;
   padding: 20px;
+  height: auto;
+  position: relative;
+}
+body main #servicios #container {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  z-index: -1;
+  opacity: 0.5;
 }
 body main #servicios h2 {
   font-size: 30px;

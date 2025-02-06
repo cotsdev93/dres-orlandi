@@ -1,8 +1,21 @@
 body {
   main {
+    position: relative;
     #servicios {
       text-align: center;
       padding: 20px;
+      height: auto;
+      // border: solid 1px red;
+      position: relative;
+      #container{
+        position: absolute;
+        // border: solid 1px red;
+        top: 50px ;
+        right: 80px;
+        ;
+        z-index: -1;
+        opacity: 0.5;
+      }
       h2 {
         font-size: 30px;
         font-weight: 600;

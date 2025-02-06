@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.83.4",
+    "vite": "^6.1.0"
+  }
 }
