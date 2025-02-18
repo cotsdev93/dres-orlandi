@@ -109,11 +109,17 @@ function cargarServiciosCategoria(listaServicios, selector) {
 
   for (const servicio of listaServicios) {
     contenedor.innerHTML += `
-      <div class="servicioContainer">
+      <div class="servicioContainer" role="article">
         <div class="imgContainer">
-          <img class="imgServicio" src="${servicio.img}" alt="${servicio.nombre}">
+          <img 
+            class="imgServicio" 
+            src="${servicio.img}" 
+            alt="Tratamiento de ${servicio.nombre} en Dres. Orlandi Ramos Mejía"
+            loading="lazy"
+          >
         </div>
         <h2>${servicio.nombre}</h2>
+        <meta itemprop="name" content="${servicio.nombre}">
       </div>`;
   }
 }
@@ -242,15 +248,12 @@ function initMap() {
     zoom: 16,
     disableDefaultUI: true,
     gestureHandling: "greedy",
+    title: "Ubicación de Dres. Orlandi en Ramos Mejía",
     styles: [
       {
         featureType: "road",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#d5d5d5",
-          },
-        ],
+        stylers: [{ color: "#d5d5d5" }],
       },
     ],
   });
@@ -320,42 +323,43 @@ function displayReviews(reviews) {
     limitedReviews.forEach((review) => {
       const reviewDiv = document.createElement("div");
       reviewDiv.classList.add("review");
+      reviewDiv.setAttribute('itemscope', '');
+      reviewDiv.setAttribute('itemtype', 'https://schema.org/Review');
 
       const avatar = review.profile_photo_url
-      ? `<img src="${review.profile_photo_url}" alt="${review.author_name}" onerror="this.src='https://via.placeholder.com/50'">`
-      : `<img src="https://via.placeholder.com/50" alt="Avatar">`;
+        ? `<img src="${review.profile_photo_url}" alt="Foto de perfil de ${review.author_name}" loading="lazy">`
+        : `<img src="https://via.placeholder.com/50" alt="Avatar por defecto" loading="lazy">`;
 
       const stars = createStars(review.rating);
 
       reviewDiv.innerHTML = `
-      <div class="reviewDetailsContainer">
-        <a
-          href="${review.author_url}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="reviewDetails">
-            ${avatar}
-            <div class="nombreFechaContainer">
-              <p class="nombre">${review.author_name}</p>
-              <div class="fechaEstrellaContainer">
-                <p class="fecha">
-                  ${new Date(review.time * 1000).toLocaleDateString()}
-                </p>
-                <span class="stars">${stars}</span>
+        <div class="reviewDetailsContainer">
+          <a href="${review.author_url}" target="_blank" rel="noopener noreferrer">
+            <div class="reviewDetails">
+              ${avatar}
+              <div class="nombreFechaContainer">
+                <p class="nombre" itemprop="author">${review.author_name}</p>
+                <div class="fechaEstrellaContainer">
+                  <p class="fecha">
+                    <meta itemprop="datePublished" content="${new Date(review.time * 1000).toISOString()}">
+                    ${new Date(review.time * 1000).toLocaleDateString()}
+                  </p>
+                  <span class="stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <meta itemprop="ratingValue" content="${review.rating}">
+                    ${stars}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <p class="reviewText">${review.text}</p>
-        </a>
-      </div>
+            <p class="reviewText" itemprop="reviewBody">${review.text}</p>
+          </a>
+        </div>
       `;
 
       reviewsContainer.appendChild(reviewDiv);
     });
   } else {
-    reviewsContainer.innerHTML =
-      "<p class='no-reviews'>No hay reseñas disponibles.</p>";
+    reviewsContainer.innerHTML = "<p class='no-reviews'>No hay reseñas disponibles.</p>";
   }
 }
 
@@ -445,5 +449,39 @@ initializeCarousel(
   ".chevronRightPacientes",
   "#reviewsContainer"
 );
+
+// Add structured data for the business
+function addStructuredData() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Dres. Orlandi",
+    "description": "Clínica especializada en medicina estética y tratamientos médicos en Ramos Mejía",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Rivadavia 13.612",
+      "addressLocality": "Ramos Mejía",
+      "addressRegion": "Buenos Aires",
+      "postalCode": "B1704",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.64087678885384,
+      "longitude": -58.56284795125639
+    },
+    "url": "https://dresorlandi.com.ar",
+    "telephone": "+54 11 4654-9900",
+    "priceRange": "$$"
+  };
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.text = JSON.stringify(structuredData);
+  document.head.appendChild(script);
+}
+
+// Call structured data initialization
+document.addEventListener('DOMContentLoaded', addStructuredData);
 
 
