@@ -1,20 +1,16 @@
 body {
   main {
     position: relative;
+    overflow: hidden;
     #servicios {
       text-align: center;
       padding: 20px;
       height: auto;
-      // border: solid 1px red;
       position: relative;
-      #container{
+      #container {
         position: absolute;
-        // border: solid 1px red;
-        top: 50px ;
-        right: 80px;
-        ;
-        z-index: -1;
-        opacity: 0.5;
+        top: 0px;
+        right: -1000px;
       }
       h2 {
         font-size: 30px;
@@ -22,11 +18,8 @@ body {
         color: $grisOscuro;
       }
       .container {
-        // position: relative;
-        margin-top: 20px;
-        // border: solid 1px red;
+        margin-top: 10px;
         .textContainer {
-          // border: solid 1px blue;
           display: flex;
           justify-content: center;
           margin: 15px;
@@ -52,7 +45,6 @@ body {
             text-align: left;
             display: flex;
             align-items: center;
-            // border: solid 1px red;
             width: 50%;
             margin: 10px;
           }
