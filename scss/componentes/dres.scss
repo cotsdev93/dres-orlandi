@@ -1,0 +1,42 @@
+body {
+  #dres {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .drOrlandiContainer {
+      .imgContainer {
+        height: 80vh;
+        position: relative;
+
+        box-shadow: 0px 0px 4px 1px #00000020;
+        img {
+          border-radius: 5px;
+          height: 100%;
+        }
+
+        .infoContainer {
+          background-color: $blanco;
+          position: absolute;
+          border-radius: 5px;
+          bottom: 5px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 95%;
+          padding: 5px;
+
+          .name {
+            color: $grisOscuro;
+            font-size: 18px;
+          }
+          .mn {
+            color: $gris;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
