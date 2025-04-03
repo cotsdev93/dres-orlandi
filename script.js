@@ -62,7 +62,6 @@ if (isMobile) {
   });
 }
 
-
 ///////////////////////////////// Clase para manejar los servicios
 function correccionError() {
   setTimeout(() => {
@@ -323,8 +322,8 @@ function displayReviews(reviews) {
     limitedReviews.forEach((review) => {
       const reviewDiv = document.createElement("div");
       reviewDiv.classList.add("review");
-      reviewDiv.setAttribute('itemscope', '');
-      reviewDiv.setAttribute('itemtype', 'https://schema.org/Review');
+      reviewDiv.setAttribute("itemscope", "");
+      reviewDiv.setAttribute("itemtype", "https://schema.org/Review");
 
       const avatar = review.profile_photo_url
         ? `<img src="${review.profile_photo_url}" alt="Foto de perfil de ${review.author_name}" loading="lazy">`
@@ -334,14 +333,18 @@ function displayReviews(reviews) {
 
       reviewDiv.innerHTML = `
         <div class="reviewDetailsContainer">
-          <a href="${review.author_url}" target="_blank" rel="noopener noreferrer">
+          <a href="${
+            review.author_url
+          }" target="_blank" rel="noopener noreferrer">
             <div class="reviewDetails">
               ${avatar}
               <div class="nombreFechaContainer">
                 <p class="nombre" itemprop="author">${review.author_name}</p>
                 <div class="fechaEstrellaContainer">
                   <p class="fecha">
-                    <meta itemprop="datePublished" content="${new Date(review.time * 1000).toISOString()}">
+                    <meta itemprop="datePublished" content="${new Date(
+                      review.time * 1000
+                    ).toISOString()}">
                     ${new Date(review.time * 1000).toLocaleDateString()}
                   </p>
                   <span class="stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
@@ -359,7 +362,8 @@ function displayReviews(reviews) {
       reviewsContainer.appendChild(reviewDiv);
     });
   } else {
-    reviewsContainer.innerHTML = "<p class='no-reviews'>No hay reseñas disponibles.</p>";
+    reviewsContainer.innerHTML =
+      "<p class='no-reviews'>No hay reseñas disponibles.</p>";
   }
 }
 
@@ -455,33 +459,69 @@ function addStructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    "name": "Dres. Orlandi",
-    "description": "Clínica especializada en medicina estética y tratamientos médicos en Ramos Mejía",
-    "address": {
+    name: "Dres. Orlandi",
+    description:
+      "Clínica especializada en medicina estética y tratamientos médicos en Ramos Mejía",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Av. Rivadavia 13.612",
-      "addressLocality": "Ramos Mejía",
-      "addressRegion": "Buenos Aires",
-      "postalCode": "B1704",
-      "addressCountry": "AR"
+      streetAddress: "Av. Rivadavia 13.612",
+      addressLocality: "Ramos Mejía",
+      addressRegion: "Buenos Aires",
+      postalCode: "B1704",
+      addressCountry: "AR",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": -34.64087678885384,
-      "longitude": -58.56284795125639
+      latitude: -34.64087678885384,
+      longitude: -58.56284795125639,
     },
-    "url": "https://dresorlandi.com.ar",
-    "telephone": "+54 11 4654-9900",
-    "priceRange": "$$"
+    url: "https://dresorlandi.com.ar",
+    telephone: "+54 11 4654-9900",
+    priceRange: "$$",
   };
 
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
   script.text = JSON.stringify(structuredData);
   document.head.appendChild(script);
 }
 
 // Call structured data initialization
-document.addEventListener('DOMContentLoaded', addStructuredData);
+document.addEventListener("DOMContentLoaded", addStructuredData);
 
+//////////////////////////////////////////////// DRES
 
+class Dres {
+  constructor() {
+    this.dres = [];
+    this.cargarRegistros();
+  }
+
+  async cargarRegistros() {
+    const resultado = await fetch("JSON/dres.JSON");
+    this.dres = await resultado.json();
+    cargarDres(this.dres);
+  }
+}
+
+function cargarDres(dres) {
+  const dresDiv = document.getElementById("dres")
+  for(dr of dres) {
+    dresDiv.innerHTML += `
+    <div class="drContainer">
+      <div class="imgContainer">
+        <img src="${dr.img}" alt="" />
+        <div class="infoContainer">
+          <div class="firstContainer">
+            <p class="name">${dr.nombre}</p>
+            <p class="mn">${dr.mn}</p>
+          </div>
+          <p class="specs">${dr.specs}</p>
+        </div>
+      </div>
+    </div>
+    `
+  }
+}
+
+const dres = new Dres()

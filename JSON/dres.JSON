@@ -1,0 +1,26 @@
+[
+  {
+    "img": "./assets/img/drOrlandi.jpg",
+    "nombre": "Miguel Orlandi",
+    "mn": "7.561.871",
+    "specs": "neonatologo"
+  },
+  {
+    "img": "./assets/img/draOrlandi.jpg",
+    "nombre": "Micaela Orlandi",
+    "mn": "7.561.871",
+    "specs": "neonatologo"
+  },
+  {
+    "img": "./assets/img/dr03.jpg",
+    "nombre": "dr chapatin",
+    "mn": "7.561.871",
+    "specs": "neonatologo"
+  },
+  {
+    "img": "./assets/img/dr02.jpg",
+    "nombre": "dr chapatin",
+    "mn": "7.561.871",
+    "specs": "neonatologo"
+  }
+]

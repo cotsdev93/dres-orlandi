@@ -1484,16 +1484,18 @@ body #dres {
   justify-content: center;
   align-items: center;
 }
-body #dres .drOrlandiContainer .imgContainer {
-  height: 80vh;
+body #dres .drContainer .imgContainer {
+  height: 70vh;
   position: relative;
+  margin: 5px;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1254901961);
+  border-radius: 5px;
 }
-body #dres .drOrlandiContainer .imgContainer img {
+body #dres .drContainer .imgContainer img {
   border-radius: 5px;
   height: 100%;
 }
-body #dres .drOrlandiContainer .imgContainer .infoContainer {
+body #dres .drContainer .imgContainer .infoContainer {
   background-color: #ffffff;
   position: absolute;
   border-radius: 5px;
@@ -1504,20 +1506,20 @@ body #dres .drOrlandiContainer .imgContainer .infoContainer {
   padding: 5px;
   height: auto;
 }
-body #dres .drOrlandiContainer .imgContainer .infoContainer .firstContainer {
+body #dres .drContainer .imgContainer .infoContainer .firstContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-body #dres .drOrlandiContainer .imgContainer .infoContainer .firstContainer .name {
+body #dres .drContainer .imgContainer .infoContainer .firstContainer .name {
   color: #464648;
   font-size: 18px;
 }
-body #dres .drOrlandiContainer .imgContainer .infoContainer .firstContainer .mn {
+body #dres .drContainer .imgContainer .infoContainer .firstContainer .mn {
   color: #79797A;
   font-size: 12px;
 }
-body #dres .drOrlandiContainer .imgContainer .infoContainer .specs {
+body #dres .drContainer .imgContainer .infoContainer .specs {
   font-size: 12px;
   color: #464648;
 }
