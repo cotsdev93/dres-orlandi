@@ -132,7 +132,7 @@ body header nav ul li a:not(:hover)::after {
     cursor: pointer;
     opacity: 0;
     right: 0;
-    top: -10px;
+    top: -12px;
   }
   body header nav .navigation .menuH {
     position: relative;
@@ -1477,11 +1477,21 @@ body .intro .logoIntroAnimation {
     opacity: 1;
   }
 }
-body #dres {
+body .dres {
   display: flex;
-  margin: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-body #dres .drContainer {
+body .dres h2 {
+  margin-top: 20px;
+  color: #464648;
+}
+body .dres #dres {
+  display: flex;
+  margin: 10px;
+}
+body .dres #dres .drContainer {
   margin: 10px;
   position: relative;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1254901961);
@@ -1489,16 +1499,16 @@ body #dres .drContainer {
   border: solid 0.5px rgb(204, 204, 204);
   transition: all 0.5s;
 }
-body #dres .drContainer:hover {
+body .dres #dres .drContainer:hover {
   box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1882352941);
   transform: scale(1.01);
 }
-body #dres .drContainer img {
+body .dres #dres .drContainer img {
   width: 100%;
   border-radius: 5px;
   height: 100%;
 }
-body #dres .drContainer .infoContainer {
+body .dres #dres .drContainer .infoContainer {
   background-color: #f7f9f9;
   position: absolute;
   bottom: 5px;
@@ -1507,25 +1517,35 @@ body #dres .drContainer .infoContainer {
   width: 95%;
   padding: 5px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 3px;
 }
-body #dres .drContainer .infoContainer .name {
+body .dres #dres .drContainer .infoContainer .name {
   color: #464648;
   font-size: 18px;
 }
-body #dres .drContainer .infoContainer .specs {
+body .dres #dres .drContainer .infoContainer .specs {
   font-size: 12px;
   color: #464648;
 }
 
 @media (max-width: 737px) {
-  body #dres {
+  body .dres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .dres h2 {
+    margin-top: 20px;
+    color: #464648;
+  }
+  body .dres #dres {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 5px;
   }
-  body #dres .drContainer {
+  body .dres #dres .drContainer {
     margin: 5px;
     position: relative;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1254901961);
@@ -1533,12 +1553,12 @@ body #dres .drContainer .infoContainer .specs {
     width: 45%;
     border: solid 0.5px gray;
   }
-  body #dres .drContainer img {
+  body .dres #dres .drContainer img {
     width: 100%;
     border-radius: 5px;
     height: 100%;
   }
-  body #dres .drContainer .infoContainer {
+  body .dres #dres .drContainer .infoContainer {
     background-color: #ffffff;
     position: absolute;
     bottom: 5px;
@@ -1548,11 +1568,11 @@ body #dres .drContainer .infoContainer .specs {
     padding: 5px;
     height: auto;
   }
-  body #dres .drContainer .infoContainer .name {
+  body .dres #dres .drContainer .infoContainer .name {
     color: #464648;
     font-size: 18px;
   }
-  body #dres .drContainer .infoContainer .specs {
+  body .dres #dres .drContainer .infoContainer .specs {
     font-size: 12px;
     color: #464648;
   }
