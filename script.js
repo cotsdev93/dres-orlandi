@@ -509,15 +509,10 @@ function cargarDres(dres) {
   for(dr of dres) {
     dresDiv.innerHTML += `
     <div class="drContainer">
-      <div class="imgContainer">
-        <img src="${dr.img}" alt="" />
-        <div class="infoContainer">
-          <div class="firstContainer">
-            <p class="name">${dr.nombre}</p>
-            <p class="mn">${dr.mn}</p>
-          </div>
-          <p class="specs">${dr.specs}</p>
-        </div>
+      <img src="${dr.img}" alt="" />
+      <div class="infoContainer">
+        <p class="name">${dr.nombre}</p>
+        <p class="specs">${dr.specs}</p>
       </div>
     </div>
     `

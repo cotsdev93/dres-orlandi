@@ -13,14 +13,14 @@
   },
   {
     "img": "./assets/img/dr03.jpg",
-    "nombre": "dr chapatin",
+    "nombre": "Valeria La Torre",
     "mn": "7.561.871",
-    "specs": "neonatologo"
+    "specs": "Cosmiatra"
   },
   {
     "img": "./assets/img/dr02.jpg",
-    "nombre": "dr chapatin",
+    "nombre": "Mariela Perez",
     "mn": "7.561.871",
-    "specs": "neonatologo"
+    "specs": "Nutricionista"
   }
 ]
